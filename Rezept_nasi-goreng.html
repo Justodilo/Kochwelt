@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kochwelt</title>
+    <link rel="stylesheet" href="./style.css" /> 
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+             <a class="brand" href="#">
+                <span class="web-logo"><img src="./logo.png" alt="Logo"></span>
+            </a>
+
+            <nav class="nav">
+                <a class="nav-link" href="#">Start</a>
+                <a class="nav-link is-active" href="#">Rezept des Tages</a>
+                <a class="nav-link" href="#">Kontakt</a>
+                <a class="nav-link" href="#">Impressum</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container page">
+        <h1 class="page-title">Nasi Goreng</h1>
+        <section class="img"> 
+            <!--FEHLT-->
+
+        </section>
+        <section class="meta">
+            <div class="chip"><span class="chip-icon"> <img src="./img/icons/clock-regular.svg" alt="Zeit"> </span><span>30 Min.</span></div>
+            <div class="chip"><span class="chip-icon"><img src="./img/icons/brain-solid.svg" alt="Schwierigkeit"></span><span>normal</span></div>
+            <div class="chip"><span class="chip-icon"><img src="./img/icons/calendar-alt-regular.svg" alt="Datum"></span><span>07.01.2026</span></div>
+        </section>
+        <section class="ingredients">
+         <div class="ingredients-head">
+           <div class="portion-controls">
+            <label class="portion-label" for="portionsInput">Zutaten für</label>
+            <input id="portionsInput" class="portion-input" type="number" min="1" step="1" value="2" />
+            <button id="portionsBtn" class="portion-btn" type="button">Portionen</button>
+           </div>
+         </div>
+        <ul class="ingredients-list" id="ingredientsList" ></ul>
+        </section>
+        <section class="prep">
+            <h2 class="section-title">Zubereitung</h2>
+                <div class="chip chip--soft">
+                    <span class="chip-icon"><img src="./img/icons/clock-regular.svg" alt="Zeit"></span><span>ca. 30 Minuten</span>
+                </div>
+            <p class="prep-text">
+                Der Reis wird idealerweise bereits am Vortag gekocht und vollständig abgekühlt, da nur trockener, 
+                kalter Reis die typische körnige Konsistenz von Nasi Goreng ergibt. Schalotten, Knoblauch, Chili und 
+                die Shrimppaste werden im Mörser zu einer feinen Gewürzpaste zerstoßen; alternativ kann ein Mixer 
+                verwendet werden, wobei das Aroma beim Mörsern intensiver bleibt. Hähnchenfleisch oder Garnelen werden
+                 in kleine Stücke geschnitten und bereitgestellt, ebenso die Eier, da beim Braten alles sehr schnell 
+                 gehen muss.
+            <br>
+            <br>
+                Ein Wok oder eine große Pfanne wird stark erhitzt und mit neutralem Öl versehen. Zuerst wird die 
+                vorbereitete Gewürzpaste bei hoher Hitze kurz angebraten, bis sie intensiv duftet, jedoch nicht 
+                verbrennt. Anschließend wird das Fleisch oder die Garnelen zugegeben und scharf angebraten, bis sie 
+                gerade gar sind. Die Eier werden direkt in die Pfanne geschlagen, grob verrührt und leicht stocken 
+                gelassen. Danach kommt der kalte Reis hinzu, der bei weiterhin hoher Hitze kräftig untergehoben und 
+                zerteilt wird, sodass keine Klumpen entstehen. Zum Würzen werden Kecap Manis, optional etwas helle 
+                Sojasauce sowie weißer Pfeffer untergemischt. Der Reis wird weitere ein bis zwei Minuten gebraten, 
+                bis er leicht rösch ist und eine gleichmäßige Farbe angenommen hat. Serviert wird Nasi Goreng 
+                traditionell mit einem Spiegelei, Röstzwiebeln sowie frischer Gurke, Tomate und Krupuk.
+            </p>
+        </section>
+        <section class="author">
+            <h3 class="author-title">Rezept erstellt von</h3>
+            <div class="author-card">
+                    <div class="avatar"></div>
+                    <div class="author-name">Odilo M.</div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-logo"> <img src="./img/logo.png" alt="Logo"></div>
+        </div>
+
+        <div class="social">
+            <a class="social-btn fb" href="#">
+                <span class="social-icon"><img src="./fb.png" alt="facebook"></span>
+            </a>
+            
+            <a class="social-btn ig" href="#">
+                <span class="social-icon"><img src="./ig.png" alt="instagram"></span>
+            </a>
+
+            <a class="social-btn tw" href="#">
+                <span class="social-icon"><img src="./twitter.png" alt="twitter"></span>
+            </a>  
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
