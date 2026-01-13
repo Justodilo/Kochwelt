@@ -1,19 +1,19 @@
 const base_portion = 2;
 
 let ingredients = [
-    { qty: 350, unit:"g", name: "gekochter kalter Reis(am besten Vortag, Jasminreis)"},
-    { qty: 2, unit:"Stk", name: "Eier(n)"},
-    { qty: 150, unit:"g", name: "Hähnchenfleisch oder Garnelen(optional)"},
+    { qty: 350, unit:"g", name: "gekochter kalter Reis", note: "(am besten vom Vortag, Jasminreis)"},
+    { qty: 2, unit:"Stk", name: "Ei(er)"},
+    { qty: 150, unit:"g", name: "Hähnchenfleisch oder Garnelen", note: "(optional)"},
     { qty: 3, unit:"EL", name: "Rapsöl"},
     { qty: 2, unit:"Stk", name: "Schalotte(n)"},
     { qty: 2, unit:"Stk", name: "Knoblauchzeh(en)"},
-    { qty: 1, unit:"Stk", name: "kleine Rote Chili(nach Schärfewunsch)(Optional Chiliflocken)"},
-    { qty: 0.5, unit:"TL", name: "Terasi (Indonesische Shrimppaste, optional)"},
+    { qty: 1, unit:"Stk", name: "kleine Rote Chili", note:"(nach Schärfewunsch, optional Chiliflocken)"},
+    { qty: 0.5, unit:"TL", name: "Terasi", note:"(Indonesische Shrimppaste, optional)"},
     { qty: 0.25, unit:"TL", name: "Salz"},
-    { qty: 2, unit:"EL", name: "Kecap Manis (süße indonesische Sojasoße)"},
+    { qty: 2, unit:"EL", name: "Kecap Manis", note:"(süße indonesische Sojasoße)"},
     { qty: 1, unit:"TL", name: "helle Sojasoße"},
     { qty: 0.5, unit:"EL", name: "Oystersoße"},
-    { qty: null, unit:"", name: "Prise weißer Pfeffer"},
+    { qty: null, unit:"", name: "Weißer Pfeffer"},
 ];
 let portionsInput = document.getElementById("portionsInput");
 const portionsBtn = document.getElementById("portionsBtn");
@@ -30,6 +30,8 @@ function scaleQty(qty,portions) {
     if (qty === null) return null;
     return (qty / base_portion) * portions;
 }
+
+
 function renderIngredients(portions) {
   if (!ingredientsList) return;
 
@@ -48,6 +50,7 @@ function renderIngredients(portions) {
       if (ing.unit) qtyText = qtyText + " " + ing.unit;
     }
 
+
 html = html + '<li class="ingredient-item">' +
                 '<div class="ingredient-left">' +
                     '<div class="qty">' +
@@ -56,6 +59,10 @@ html = html + '<li class="ingredient-item">' +
 
                     '<div class="ing-name">' +
                      ing.name +
+                    '</div>' +
+
+                    '<div class="note">' +
+                    (ing.note || " ") +
                     '</div>' +
                 '</div>' +
               '</li>';
