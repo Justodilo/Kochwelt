@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kochwelt</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="icon" href="./img/logo_small.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  
+  <body>
+    <div class="header">
+      <div>
+        <a href="index.html">
+          <img src="./img/logo.png" alt="Kochwelt Überschrift" />
+        </a>
+      </div>
+
+      <div class="menue">
+        <a href="index.html#Start">Start</a>
+        <a href="index.html#Rezept-des-Tages">Rezept des Tages</a>
+        <a href="index.html#Kontakt">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
+      </div>
+    </div>
+    <h1>Teriyaki Chicken Wings</h1>
+
+    <div class="headpic">
+      <img src="./Headpic.jpeg" alt="" />
+    </div>
+    <div class="cooking-time-box">
+      <div>
+        <div class="clock">
+          <img
+            class="cooking-time"
+            src="./img/icons/clock-regular.svg"
+            alt="clock"
+          />
+          <p>120 Min.</p>
+        </div>
+      </div>
+      <div>
+        <div class="clock">
+          <img
+            class="cooking-time"
+            src="./img/icons/brain-solid.svg"
+            alt="level"
+          />
+          <p>Einfach</p>
+        </div>
+      </div>
+      <div>
+        <div class="clock">
+          <img
+            class="cooking-time"
+            src="./img/icons/calendar-alt-regular.svg"
+            alt="clock"
+          />
+          <p>08.01.2025</p>
+        </div>
+      </div>
+    </div>
+    <div class="singlepixeldiv"></div>
+
+    <div class="ingredients-bar">
+      <p>Zutaten für</p>
+      <input id="portionInput" type="number" min="1" max="20" value="1" />
+      <button id="portionBtn" type="button">Portionen</button>
+    </div>
+
+    <ul id="ingredientsList" class="ingredients-list"></ul>
+
+    <h2>Zubereitung</h2>
+    <div class="cooking-time-box">
+      <div>
+        <div class="recipe-time">
+          <img
+            class="cooking-time"
+            src="./img/icons/clock-regular.svg"
+            alt="clock"
+          />
+          <p>30 Min.</p>
+        </div>
+      </div>
+      <div>
+        <div class="recipe-time">
+          <img
+            class="cooking-time"
+            src="./img/icons/clock-regular.svg"
+            alt="clock"
+          />
+          <p>Gesamtzeit ca. 120 Min.</p>
+        </div>
+      </div>
+    </div>
+    <p class="textcontent">
+      Die Hähnchenflügel gründlich waschen, trocken tupfen und mit der Hautseite
+      nach oben auf ein großes Backblech legen. Anschließend großzügig mit grob
+      geschrotetem Salz bestreuen und bei 160 °C Umluft für 90 Minuten im Ofen
+      garen. Nach der Hälfte der Zeit die Flügel einmal wenden. Während die
+      Hähnchenflügel im Ofen sind, die Glasur vorbereiten. Dafür alle Zutaten in
+      einen kleinen Kochtopf geben und gut miteinander verrühren. Die Mischung
+      bei mittlerer Hitze etwa 5 Minuten leicht köcheln lassen. Etwas warmes
+      Wasser mit Maisstärke glatt rühren und die Mischung nach und nach in die
+      Sauce einrühren. Sobald die Sauce erneut aufkocht, dickt sie an und ist
+      fertig. In den letzten 30 Minuten der Garzeit die Hähnchenflügel vom
+      Backblech nehmen und auf ein Grillrost legen, dabei die Hautseite nach
+      unten platzieren. Die Flügel mit einem Pinsel großzügig mit der Glasur
+      bestreichen und für 15 Minuten bei 180 °C Umluft wieder in den Ofen geben.
+      Nach weiteren 15 Minuten die Hähnchenflügel wenden und den Vorgang
+      wiederholen, indem sie erneut mit der Glasur bestrichen werden.
+      Anschließend die Hähnchenflügel aus dem Ofen nehmen und nebeneinander
+      liegend servieren.
+    </p>
+    <h3>Rezept erstellt von</h3>
+
+    <div class="creator">
+      <img class="creator-pic" src="./Profilepicturefabian.jpeg" alt="" />
+      Fabian
+    </div>
+    <footer class="footer">
+      <img class="footer-logo" src="./img/logo.png" alt="Kochwelt Logo" />
+
+      <div class="datenschutz">
+        <a href="#Datenschutz">Datenschutz</a>
+      </div>
+
+      <div class="social-media">
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="social-media-icon"
+            src="./instagram_logo.png"
+            alt="Instagram"
+          />
+        </a>
+
+        <a
+          href="https://de-de.facebook.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="social-media-icon"
+            src="./facebook_logo.png"
+            alt="Facebook"
+          />
+        </a>
+      </div>
+    </footer>
+    <script src="Script-Fabian.js"></script>
+  </body>
+</html>
