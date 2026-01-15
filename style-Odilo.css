@@ -158,6 +158,9 @@ html{
 .nav-drawer .nav-link:hover{
   color: var(--light-green);
 }
+.nav-link:hover{
+  color: var(--light-green);
+}
 
 .nav-link.is-active{
   color: var(--green);
