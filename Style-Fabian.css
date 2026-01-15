@@ -322,16 +322,6 @@ img {
   border-radius: 0;
 }
 
-.datenschutz {
-  font-family: "Raleway", sans-serif;
-  font-size: 20px;
-}
-
-.datenschutz a {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-}
-
 .social-media {
   display: flex;
   align-items: center;
@@ -409,7 +399,6 @@ img {
     padding: 20px;
     justify-content: center;
     text-align: center;
-    
   }
 
   .footer-logo {
