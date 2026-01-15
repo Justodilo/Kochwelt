@@ -446,3 +446,16 @@ img {
     width: min(1920px, calc(100% - 80px));
   }
 }
+.site-footer img {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+}
+.footer-logo img {
+  width: auto;
+  max-width: 220px;
+  height: clamp(52px, 6vw, 75px);
+  object-fit: contain;
+  border-radius: 0;
+}
