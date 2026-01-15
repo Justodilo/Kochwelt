@@ -17,13 +17,27 @@
                 <span class="web-logo"><img class="web-logo img" src="./logo.png" alt="Logo"></span>
             </a>
 
-            <nav class="nav">
+            <button class="nav-toggle" id="navToggle" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav nav-desktop">
                 <a class="nav-link" href="#">Start</a>
                 <a class="nav-link is-active" href="#">Rezept des Tages</a>
                 <a class="nav-link" href="#">Kontakt</a>
-                <a class="nav-link" href="#">Impressum</a>
+                <a class="nav-link" href="./impressum.html">Impressum</a>
             </nav>
         </div>
+        <div class="nav-overlay" id="navOverlay" hidden></div>
+
+        <nav class="nav-drawer" id="mobileMenu" hidden>
+            <a class="nav-link" href="#">Start</a>
+            <a class="nav-link is-active" href="#">Rezept des Tages</a>
+            <a class="nav-link" href="#">Kontakt</a>
+            <a class="nav-link" href="./impressum.html">Impressum</a>
+        </nav>
     </header>
     <main class="container page">
         <h1 class="page-title">Nasi Goreng</h1>
