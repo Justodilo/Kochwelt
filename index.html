@@ -5,195 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rezept des Tages</title>
 
-    <style>
+     <link rel="stylesheet" href="Style-mockup.css" />
 
-.header {
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0px 50px 0px 50px;
-  border-bottom: 2px solid #ccc; 
-  box-shadow: 0 2px 10px 0 rgb (0 0 0);
-  background-color: white;
-}
-
-
-
-.menu {
-      position: absolute;
-      right: 50px;
-      display: flex;
-      gap: 10px;
-        justify-content: flex-end;
-      align-items: center;
-      font-family: "Raleway", sans-serif;
-      font-weight: normal;
-      font-size: 18px;
-      padding: 2px 14px 2px 8px;
-    }
-
-    .menu a {
-  position: relative;
-  color: black;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 18px 10px; /* Abstand zur Linie */
-}
-
-.menu a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0px;           /* knapp unter dem Text */
-  width: 100%;
-  height: 2px;
-  background-color: transparent;
-
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  
-}
-
-    .menu a:hover {
-  color: rgb(0,128,0);
-}
-
-.menu a:hover::after {
-  background-color: rgb(0,128,0);
-  bottom: -4px;
-  size: 8px;
-}
-
-    .kochwelt {
-      width: 180px;
-      height: 60px;
-      position: absolute;
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-    }
-
-.vorschau {
-  display: flex;
-  align-items: stretch;       /* gleiche Höhe */
-  gap: 32px;
-  font-family: 'Raleway';
-  margin: 30px 50px 0;
-  padding-top: 8px;
-}
-
-.vorschau img {
-  height: 256px;
-  width: 512px;
-  border-radius: 10px;
-  object-fit: cover;
-  flex-shrink: 0;             /* Bild bleibt fix */
-}
-
-/* rechter Bereich */
-.text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Button unten */
-  max-height: 220px;              /* NICHT höher als Bild */
-}
-
-.text h1 {
-  margin: 0;
-}
-
-.text h3 {
-  margin: 12px 0;
-  font-weight: normal;
-  color: #555;
-}
-
-/* Button bleibt wie er ist */
-.button {
-  background-color: rgb(0, 128, 0);
-  border: none;
-  color: white;
-  padding: 8px 32px;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  width: fit-content;
-}
-
-.Rezepte {
-  font-family: Raleway;
-  background-color: #eee;
-margin: 50px 0 50px 0;
-padding: 24px 50px 24px 50px;
-}
-
-.Rezepte h2 {
-  margin-bottom: 24px;
-  display: flex;
-  justify-content: center;
-}
-
-/* Container für die 3 Bilder */
-.rezepte-grid {
-  display: flex;
-  justify-content: space-between;
-}
-
-/* Einzelnes Rezept */
-.rezept {
-  text-align: center;
-}
-
-/* Bilder */
-.rezept img {
-  height: 128px;
-  width: 128px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-/* Text unter Bild */
-.rezept p {
-  margin-top: 8px;
-  font-size: 14px;
-  font-family: Raleway;
-}
-
-.wok{
-    margin: 0 50px 0 50px;
-}
-
-.wok h2 {
-  margin-bottom: 24px;
-  display: flex;
-  justify-content: center;
-}
-
-.wok-content {
-  display: flex;
-  align-items: center;       /* gleiche Höhe / Ausrichtung */
-  justify-content: space-between;
-  gap: 24px;
-padding-bottom: 50px;
-}
-
-.wok p {
-  font-size: 14px;
-  font-family: Raleway;
-  flex: 1;                   /* Text nimmt Platz links ein */
-}
-
-.wok img {
-  height: 128px;
-  width: 128px;
-  border-radius: 10px;
-  object-fit: cover;
-  flex-shrink: 0;             /* Bild bleibt rechts stabil */
-}
-
-
-    </style>
-    
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -207,7 +20,7 @@ padding-bottom: 50px;
   <img class="kochwelt" src="./img/logo.png">
   <nav class="menu">
     <a href="#start">Start</a>
-    <a href="Rezept Fabian.html">Rezept des Tages</a>
+    <a href="index.html">Rezept des Tages</a>
     <a href="#kontakt">Kontakt</a>
     <a href="impressum.html">Impressum</a>
   </nav>
@@ -229,17 +42,17 @@ padding-bottom: 50px;
 
   <div class="rezepte-grid">
     <div class="rezept">
-      <a href="./kaesespaetzle.html">
-        <img src="./img/nudeln.jpg" alt="">
+      <a href="./Rezept Fabian.html">
+        <img src="./img/Headpic.jpeg" alt="Chicken Wings">
       </a>
-      <p>Hier Text</p>
+      <p>Chicken Wings</p>
     </div>
 
     <div class="rezept">
-      <a href="./kaesespaetzle.html">
-        <img src="./img/nudeln.jpg" alt="">
+      <a href="./Rezept_nasi-goreng.html">
+        <img src="./img/nasgor.jpg" alt="Nasi Goreng">
       </a>
-      <p>Hier Text</p>
+      <p>Nasi Goreng</p>
     </div>
 
     <div class="rezept">
@@ -260,6 +73,40 @@ padding-bottom: 50px;
 
     <img src="./img/wok.jpg" alt="Wok">
   </div>
+
+  <footer class="footer">
+      <img class="footer-logo" src="./img/logo.png" alt="Kochwelt Logo" />
+
+      <div class="datenschutz">
+        <a href="#Datenschutz">Datenschutz</a>
+      </div>
+
+      <div class="social-media">
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="social-media-icon"
+            src="./instagram_logo.png"
+            alt="Instagram"
+          />
+        </a>
+
+        <a
+          href="https://de-de.facebook.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="social-media-icon"
+            src="./facebook_logo.png"
+            alt="Facebook"
+          />
+        </a>
+      </div>
+    </footer>
 
 </body>
 </html>

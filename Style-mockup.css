@@ -1,0 +1,404 @@
+html
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  height: 120px;
+  box-shadow: 0 6px 10px -6px rgba(127, 127, 127, 0.876);
+}
+.header img {
+  width: auto;
+  height: 80px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: rgb(4, 4, 4);
+  margin-right: 50px;
+}
+.menu a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+.menu a:hover {
+  color: rgb(0, 128, 0);
+  text-decoration: underline;
+  text-underline-offset: 20px;
+  text-decoration-thickness: 5px;
+}
+
+.vorschau {
+  display: flex;
+  align-items: stretch;       /* gleiche Höhe */
+  gap: 32px;
+  font-family: 'Raleway';
+  margin: 30px 50px 0;
+  padding-top: 8px;
+}
+
+.vorschau img {
+  height: 256px;
+  width: 512px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;             /* Bild bleibt fix */
+}
+
+/* rechter Bereich */
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Button unten */
+  max-height: 220px;              /* NICHT höher als Bild */
+}
+
+.text h1 {
+  margin: 0;
+}
+
+.text h3 {
+  margin: 12px 0;
+  font-weight: normal;
+  color: #555;
+}
+
+/* Button bleibt wie er ist */
+.button {
+  background-color: rgb(0, 128, 0);
+  border: none;
+  color: white;
+  padding: 8px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.Rezepte {
+  font-family: Raleway;
+  background-color: #eee;
+margin: 50px 0 50px 0;
+padding: 24px 50px 24px 50px;
+}
+
+.Rezepte h2 {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Container für die 3 Bilder */
+.rezepte-grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Einzelnes Rezept */
+.rezept {
+  text-align: center;
+}
+
+/* Bilder */
+.rezept img {
+  height: 128px;
+  width: 128px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Text unter Bild */
+.rezept p {
+  margin-top: 8px;
+  font-size: 14px;
+  font-family: Raleway;
+}
+
+.wok{
+    margin: 0 50px 0 50px;
+}
+
+.wok h2 {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.wok-content {
+  display: flex;
+  align-items: center;       /* gleiche Höhe / Ausrichtung */
+  justify-content: space-between;
+  gap: 24px;
+padding-bottom: 50px;
+}
+
+.wok p {
+  font-size: 14px;
+  font-family: Raleway;
+  flex: 1;                   /* Text nimmt Platz links ein */
+}
+
+.wok img {
+  height: 128px;
+  width: 128px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;             /* Bild bleibt rechts stabil */
+}
+
+
+.footer {
+  margin-top: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 200px;
+  background-color: rgb(230, 230, 230);
+  padding: 0 50px;
+}
+.footer-logo {
+  height: 100px;
+  width: auto;
+}
+.datenschutz {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+}
+
+.datenschutz a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+.social-media {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.social-media-icon {
+  height: 40px;
+  width: auto;
+}
+.impressum-text {
+  margin: 0 50px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.impressum-text h2 {
+  margin-left: 0;
+  margin-right: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.textcontent {
+  display: block;
+  line-height: 1.6;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 20px;
+  height: 120px;
+  box-shadow: 0 6px 10px -6px rgba(127, 127, 127, 0.876);
+}
+
+.header img {
+  width: auto;
+  height: 80px;
+  margin: 0 0 10px 0;
+}
+
+.menue {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+  text-decoration: none;
+  color: rgb(4, 4, 4);
+}
+
+.menue a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.menue a:hover {
+  color: rgb(0, 128, 0);
+  text-decoration: underline;
+  text-underline-offset: 20px;
+  text-decoration-thickness: 5px;
+}
+
+.singlepixeldiv {
+  height: 5px;
+  background-color: rgb(230, 230, 230);
+  margin: 75px 50px 0 50px;
+}
+
+.footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  min-height: 200px;
+  background-color: rgb(230, 230, 230);
+  padding: 25px 50px;
+}
+
+.footer-logo {
+  display: block;
+  height: 90px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.datenschutz {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+}
+
+.datenschutz a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.social-media-icon {
+  height: 40px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 30px;
+    margin: 40px 20px 15px 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin: 35px 20px 15px 20px;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin: 20px 20px 10px 20px;
+  }
+
+  .textcontent {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 16px;
+  }
+
+  .footer {
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+    min-height: 0;
+  }
+
+  .footer-logo {
+    height: 70px;
+    max-width: 200px;
+  }
+
+  .datenschutz {
+    width: 100%;
+    margin: 0;
+    order: 3;
+  }
+
+  .social-media {
+    width: 100%;
+    justify-content: center;
+    order: 2;
+  }
+
+  .footer-logo {
+    order: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .menue {
+    font-size: 16px;
+    gap: 12px;
+  }
+
+  .menue a:hover {
+    text-underline-offset: 10px;
+    text-decoration-thickness: 3px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .footer {
+    padding: 16px 12px;
+    gap: 16px;
+  }
+
+  .footer-logo {
+    height: 60px;
+    max-width: 180px;
+  }
+
+  .social-media-icon {
+    height: 34px;
+  }
+}

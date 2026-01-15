@@ -1,0 +1,493 @@
+html
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  height: 120px;
+  box-shadow: 0 6px 10px -6px rgba(127, 127, 127, 0.876);
+}
+.header img {
+  width: auto;
+  height: 80px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: rgb(4, 4, 4);
+  margin-right: 50px;
+}
+.menu a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+.menu a:hover {
+  color: rgb(0, 128, 0);
+  text-decoration: underline;
+  text-underline-offset: 20px;
+  text-decoration-thickness: 5px;
+}
+ h1 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      font-size: 28px;
+      display: flex;
+      justify-content: flex-start;
+      margin: 30px 50px 15px 50px;
+    }
+
+    h2 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      margin-top: 20px;
+      margin-left: 50px;
+    }
+
+h3 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+    }
+
+    ul, ol {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+    }
+
+.aot-image {
+    width: 90%;
+  height: 200px;
+  object-fit: cover; /* verhindert Verzerrung */
+  display: block;
+  border-radius: 20px;
+  margin: 25px 50px 25px 50px;
+}
+
+.icon-bar {
+  display: flex;
+  gap: 20px;
+  margin: 10px 50px;
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #eee;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+}
+
+.icon {
+  width: 15px;
+  height: auto;
+}
+
+.icon-box p {
+  margin: 0;
+}
+
+.Zutaten {
+  display: flex;
+  flex-direction: column;
+  text-indent: 15px;
+}
+
+.portionen-rechner {
+  display: flex;
+  align-items: center;      /* gleiche Höhe */               
+  font-family: 'Raleway';
+  margin: 30px 50px 0px 50px;
+  padding-top: 8px;
+  border-top: 1px solid #eee; 
+  
+}
+
+.portionen-rechner h3 {
+  margin-right: 10px;               /* wichtig! sonst springt die Höhe */
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.portionen-rechner input {
+  width: 50px;
+  padding: 4px;
+  text-align: center;
+      height: 24px;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      border: 1px solid #eee; 
+}
+
+.portionen-rechner label {
+  white-space: nowrap;      /* verhindert Umbruch */
+}
+
+.button {
+  background-color: rgb(0, 128, 0);;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#zutaten {
+  list-style: none; 
+}
+
+li {
+    padding: 6px 6px 6px 10px;
+    border-radius: 4px;
+}
+
+.Zubereitung{
+  margin: 5px 50px 0px 40px;
+}
+
+.Rezept{
+  margin: 30px 0 5px 50px;
+  font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+}
+
+.ersteller{
+  display: flex;
+  text-align: center;
+  justify-content: flex-start;
+  margin: 15px 0 80px 50px;
+}
+
+.ersteller img{
+    height: 60px;
+    width: auto;
+    border-radius: 360px;
+}
+
+.ersteller h3{
+  margin-left: 15px;
+}
+
+
+.footer {
+  margin-top: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 200px;
+  background-color: rgb(230, 230, 230);
+  padding: 0 50px;
+}
+.footer-logo {
+  height: 100px;
+  width: auto;
+}
+.datenschutz {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+}
+
+.datenschutz a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+.social-media {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.social-media-icon {
+  height: 40px;
+  width: auto;
+}
+.impressum-text {
+  margin: 0 50px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.impressum-text h2 {
+  margin-left: 0;
+  margin-right: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.textcontent {
+  display: block;
+  line-height: 1.6;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 20px;
+  height: 120px;
+  box-shadow: 0 6px 10px -6px rgba(127, 127, 127, 0.876);
+}
+
+.header img {
+  width: auto;
+  height: 80px;
+  margin: 0 0 10px 0;
+}
+
+.menue {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+  text-decoration: none;
+  color: rgb(4, 4, 4);
+}
+
+.menue a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.menue a:hover {
+  color: rgb(0, 128, 0);
+  text-decoration: underline;
+  text-underline-offset: 20px;
+  text-decoration-thickness: 5px;
+}
+
+.singlepixeldiv {
+  height: 5px;
+  background-color: rgb(230, 230, 230);
+  margin: 75px 50px 0 50px;
+}
+
+.footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  min-height: 200px;
+  background-color: rgb(230, 230, 230);
+  padding: 25px 50px;
+}
+
+.footer-logo {
+  display: block;
+  height: 90px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.datenschutz {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+}
+
+.datenschutz a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.social-media-icon {
+  height: 40px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 30px;
+    margin: 40px 20px 15px 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin: 35px 20px 15px 20px;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin: 20px 20px 10px 20px;
+  }
+
+  .headpic {
+    margin: 0 20px 15px 20px;
+  }
+
+  .cooking-time-box {
+    margin-left: 20px;
+    margin-right: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .singlepixeldiv {
+    margin: 40px 20px 0 20px;
+  }
+
+  .ingredients-bar {
+    margin: 0 20px;
+    flex-wrap: wrap;
+  }
+
+  .ingredients-list {
+    margin: 12px 20px 0 20px;
+  }
+
+  .ingredients-list li {
+    padding: 10px 16px;
+  }
+
+  .textcontent {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 16px;
+  }
+
+  .creator {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    gap: 15px;
+  }
+
+  .creator-pic {
+    width: 90px;
+    margin-right: 0;
+  }
+
+  .footer {
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+    min-height: 0;
+  }
+
+  .footer-logo {
+    height: 70px;
+    max-width: 200px;
+  }
+
+  .datenschutz {
+    width: 100%;
+    margin: 0;
+    order: 3;
+  }
+
+  .social-media {
+    width: 100%;
+    justify-content: center;
+    order: 2;
+  }
+
+  .footer-logo {
+    order: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .menue {
+    font-size: 16px;
+    gap: 12px;
+  }
+
+  .menue a:hover {
+    text-underline-offset: 10px;
+    text-decoration-thickness: 3px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .clock,
+  .recipe-time {
+    padding: 1px 14px;
+    height: 34px;
+  }
+
+  .ingredients-bar input {
+    width: 60px;
+  }
+
+  .ingredients-bar button {
+    width: 100%;
+  }
+
+  .ingredients-list li {
+    padding: 10px 14px;
+  }
+
+  .footer {
+    padding: 16px 12px;
+    gap: 16px;
+  }
+
+  .footer-logo {
+    height: 60px;
+    max-width: 180px;
+  }
+
+  .social-media-icon {
+    height: 34px;
+  }
+}
