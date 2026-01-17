@@ -11,8 +11,8 @@ const ingredients = [
   { name: "warmes Wasser", amount: 5, unit: "EL" },
 ];
 
-const input = document.getElementById("portionInput");
-const button = document.getElementById("portionBtn");
+const input = document.getElementById("portionsInput");
+const button = document.getElementById("portionsBtn");
 const list = document.getElementById("ingredientsList");
 
 function sanitizePortions(value) {
