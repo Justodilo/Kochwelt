@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kochwelt</title>
-    <link rel="stylesheet" href="Style-Fabian.css" />
+    <title>Kochwelt - Teriyaki Chicken Wings</title>
+    <link rel="stylesheet" href="./style-Odilo.css" />
 
     <link rel="icon" href="./img/logo_small.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,33 +30,40 @@
 
             <nav class="nav nav-desktop">
                 <a class="nav-link" href="#">Start</a>
-                <a class="nav-link" href="#">Rezept des Tages</a>
+                <a class="nav-link is-active" href="#">Rezept des Tages</a>
                 <a class="nav-link" href="#">Kontakt</a>
-                <a class="nav-link is-active" href="./impressum.html">Impressum</a>
+                <a class="nav-link" href="./impressum.html">Impressum</a>
             </nav>
         </div>
         <div class="nav-overlay" id="navOverlay" hidden></div>
 
         <nav class="nav-drawer" id="mobileMenu" hidden>
             <a class="nav-link" href="#">Start</a>
-            <a class="nav-link" href="#">Rezept des Tages</a>
+            <a class="nav-link is-active" href="#">Rezept des Tages</a>
             <a class="nav-link" href="#">Kontakt</a>
-            <a class="nav-link is-active" href="./impressum.html">Impressum</a>
+            <a class="nav-link" href="./impressum.html">Impressum</a>
         </nav>
     </header>
-    <h1>Teriyaki Chicken Wings</h1>
+    <main class="container page">
+    <h1 class="page-title">Teriyaki Chicken Wings</h1>
 
-    <div class="headpic">
-      <img src="./Headpic.jpeg" alt="" />
-    </div>
-    <div class="cooking-time-box">
+    <section class="food headpic">
+      <img class="food-img" src="./Headpic.jpeg" alt="Teriyaki Chicken Wings" />
+    </section>
+
+     <section class="meta">
+            <div class="chip"><span class="chip-icon"> <img src="./img/icons/clock-regular.svg" alt="Zeit"> </span><span>120 Min.</span></div>
+            <div class="chip"><span class="chip-icon"><img src="./img/icons/brain-solid.svg" alt="Schwierigkeit"></span><span>Einfach</span></div>
+            <div class="chip"><span class="chip-icon"><img src="./img/icons/calendar-alt-regular.svg" alt="Datum"></span><span>08.01.2026</span></div>
+        </section>
+<!--    <div class="cooking-time-box">
       <div>
         <div class="clock">
-          <img
+            <img
             class="cooking-time"
             src="./img/icons/clock-regular.svg"
             alt="clock"
-          />
+            />
           <p>120 Min.</p>
         </div>
       </div>
@@ -80,9 +87,9 @@
           <p>08.01.2025</p>
         </div>
       </div>
-    </div>
+    </div> 
     <div class="singlepixeldiv"></div>
-
+  
     <div class="ingredients-bar">
       <p>Zutaten für</p>
       <input id="portionInput" type="number" min="1" max="20" value="1" />
@@ -90,31 +97,43 @@
     </div>
 
     <ul id="ingredientsList" class="ingredients-list"></ul>
+  -->
 
-    <h2>Zubereitung</h2>
-    <div class="cooking-time-box">
-      <div>
-        <div class="recipe-time">
+        <section class="ingredients">
+         <div class="ingredients-head">
+           <div class="portion-controls">
+            <label class="portion-label" for="portionsInput">Zutaten für</label>
+            <input id="portionsInput" class="portion-input" type="number" min="1" step="1" value="1" />
+            <button id="portionsBtn" class="portion-btn" type="button">Portionen</button>
+           </div>
+         </div>
+        <ul class="ingredients-list" id="ingredientsList" ></ul>
+        </section>
+
+    <h2 class="section-title">Zubereitung</h2>
+    <div class="meta cooking-time-box">
+      <div class="chip">
+        <span class="chip-icon recipe-time">
           <img
             class="cooking-time"
             src="./img/icons/clock-regular.svg"
             alt="clock"
           />
-          <p>30 Min.</p>
-        </div>
+        </span>
+        <span>30 Min.</span>
       </div>
-      <div>
-        <div class="recipe-time">
+      <div class="chip">
+        <span class="chip-icon recipe-time">
           <img
             class="cooking-time"
             src="./img/icons/clock-regular.svg"
             alt="clock"
           />
-          <p>Gesamtzeit ca. 120 Min.</p>
-        </div>
+          </span>
+          <span>Gesamtzeit ca. 120 Min.</span>
       </div>
     </div>
-    <p class="textcontent">
+    <p class="prep-text textcontent">
       Die Hähnchenflügel gründlich waschen, trocken tupfen und mit der Hautseite
       nach oben auf ein großes Backblech legen. Anschließend großzügig mit grob
       geschrotetem Salz bestreuen und bei 160 °C Umluft für 90 Minuten im Ofen
@@ -133,12 +152,16 @@
       Anschließend die Hähnchenflügel aus dem Ofen nehmen und nebeneinander
       liegend servieren.
     </p>
-    <h3>Rezept erstellt von</h3>
 
-    <div class="creator">
-      <img class="creator-pic" src="./Profilepicturefabian.jpeg" alt="" />
-      Fabian
-    </div>
+
+    <section class="author creator">
+      <h3 class="author-title">Rezept erstellt von</h3>
+      <div class="author-card">
+        <div class="avatar"><img class="creator-pic" src="./Profilepicturefabian.jpeg" alt="avatar" /> </div>
+        <div class="author-name"> Fabian </div>
+      </div>
+    </section>
+    </main>
     <footer class="site-footer">
         <div class="container footer-inner">
             <a class="footer-logo" href="#"> <img src="./img/logo.png" alt="Logo"></a>
