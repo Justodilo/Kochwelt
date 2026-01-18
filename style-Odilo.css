@@ -1,3 +1,21 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("./Raleway/Raleway-Italic-VariableFont_wght.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Raleway";
+ src: url("./Raleway/Raleway-Italic-VariableFont_wght.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Raleway";
+ src: url("./Raleway/Raleway-Italic-VariableFont_wght.ttf");
+  font-weight: 300;
+}
+
 :root{
   --bg: #ffffff;
   --text: #1b1b1b;
