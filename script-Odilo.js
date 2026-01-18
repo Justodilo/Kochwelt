@@ -30,7 +30,7 @@ function closeMenu() {
   setTimeout(() => {
     navOverlay.hidden = true;
     mobileMenu.hidden = true;
-  }, 300);
+  }, 125);
 }
 
 function toggleMenu() {
