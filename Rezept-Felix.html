@@ -10,54 +10,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="Apfelstrudel.css">
+    <link rel="stylesheet" href="Style-Felix.css">
+   <link rel="stylesheet" href="./style-Odilo.css" /> 
 
 </head>
 
 <body>
 
-   <header>
-       
-<div class="header">
-      <div>
-        <a href="index.html">
-          <img src="./img/logo.png" alt="Kochwelt Überschrift" />
-        </a>
-      </div>
+      <header class="site-header">
+        <div class="container header-inner">
+             <a class="brand" href="./index.html">
+                <span class="web-logo"><img class="web-logo img" src="./logo.png" alt="Logo"></span>
+            </a>
 
-      <div class="menue">
-        <a href="index.html">Start</a>
-        <a href="index.html">Rezept des Tages</a>
-        <a href="Kontakt Formular.html">Kontakt</a>
-        <a href="impressum.html">Impressum</a>
-      </div>
-    </div>
+            <button class="nav-toggle" id="navToggle" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-    </header>
-    <main>
-        <div class="Info">
-
-            <div class="headline">Apfelstrudel</div>
-
-            <img class="Strudel_img" src="./img/alt-wiener-apfelstrudel.jpg">
-            <div class="info_icons">
-                <div class="info_pill">
-                    <img class="pill_icon" src="./img/icons/clock-regular.svg">
-                    <span>1h</span>
-                </div>
-
-                <div class="info_pill">
-
-                    <img class="pill_icon" src="./img/icons/brain-solid.svg">
-                    <span>simpel</span>
-                </div>
-
-                <div class="info_pill">
-                    <img class="pill_icon" src="./img/icons/calendar-alt-regular.svg">
-                    <span>08.01.2025</span>
-                </div>
-            </div>
+            <nav class="nav nav-desktop">
+                <a class="nav-link" href="./index.html">Start</a>
+                <a class="nav-link is-active" href="#">Rezept des Tages</a>
+                <a class="nav-link" href="./Kontakt Formular.html">Kontakt</a>
+                <a class="nav-link" href="./impressum.html">Impressum</a>
+            </nav>
         </div>
+        <div class="nav-overlay" id="navOverlay" hidden></div>
+
+        <nav class="nav-drawer" id="mobileMenu" hidden>
+            <a class="nav-link" href="./index.html">Start</a>
+            <a class="nav-link is-active" href="#">Rezept des Tages</a>
+            <a class="nav-link" href="./Kontakt Formular.html">Kontakt</a>
+            <a class="nav-link" href="./impressum.html">Impressum</a>
+        </nav>
+    </header>
+     <main class="container page">
+        <h1 class="page-title">Apfelstrudel</h1>
+        <section class="food"> 
+            <img class="food-img" src="./alt-wiener-apfelstrudel.jpg" alt="Apfelstrudel">
+        </section>
+
+        <section class="meta">
+            <div class="chip"><span class="chip-icon"> <img src="./img/icons/clock-regular.svg" alt="Zeit"> </span><span>1h</span></div>
+            <div class="chip"><span class="chip-icon"><img src="./img/icons/brain-solid.svg" alt="Schwierigkeit"></span><spane>einfach</span></div>
+            <div class="chip"><span class="chip-icon"><img src="./img/icons/calendar-alt-regular.svg" alt="Datum"></span><span>08.01.2026</span></div>
+        </section>
 
         <div class="Zutaten">
             <div class="portionen-rechner">
@@ -135,28 +133,33 @@
                 für ca.
                 30-40 Minuten bei Ober- und Unterhitze backen.</li>
         </ul>
-        <p class="Erstellt_von">Rezept erstellt von</p>
-        <div class="profil">
-        <img class="Felix_img" src="./img/Felix.jpg" alt="">
-        <p class="Name">Felix</p>
-        </div>
-
+         <section class="author">
+            <h3 class="author-title">Rezept erstellt von</h3>
+            <div class="author-card">
+                    <div class="avatar"><img src="./Felix.jpg" alt="avatar"> </div>
+                    <div class="author-name">Felix Pfeifer</div>
+            </div>
+        </section>
     </main>
-<footer class="site-footer">
-  <div class="footer-inner">
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <a class="footer-logo" href="./index.html"> <img src="./img/logo.png" alt="Logo"></a>
+   
+            <div class="container social">
+            <a class="social-btn fb" href="https://www.facebook.com/">
+                <span class="social-icon"><img src="./fb.png" alt="facebook"></span>
+            </a>
+            
+            <a class="social-btn ig" href="https://www.instagram.com/">
+                <span class="social-icon"><img src="./ig.png" alt="instagram"></span>
+            </a>
 
-    <a class="footer-logo" href="#">
-      <img src="./img/logo.png" alt="Logo">
-    </a>
-
-    <div class="social">
-      <a class="social-btn fb" href="https://www.facebook.com/"><img src="./img/fb.png" alt=""></a>
-      <a class="social-btn ig" href="https://www.instagram.com/"><img src="./img/ig.png" alt=""></a>
-      <a class="social-btn tw" href="https://x.com/"><img src="./img/twitter.png" alt=""></a>
-    </div>
-
-  </div>
-</footer>
+            <a class="social-btn tw" href="https://x.com/">
+                <span class="social-icon"><img src="./twitter.png" alt="twitter"></span>
+            </a>  
+          </div>
+        </div>
+    </footer>
      <script src="./Script-Fellix.js"></script>
 </body>
 
