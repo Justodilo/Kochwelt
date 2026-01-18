@@ -19,9 +19,9 @@
 <header class="header">
   <img class="kochwelt" src="./img/logo.png">
   <nav class="menu">
-    <a href="index.html">Start</a>
+    <a href="#start">Start</a>
     <a href="index.html">Rezept des Tages</a>
-    <a href="Kontakt Formular.html">Kontakt</a>
+    <a href="#kontakt">Kontakt</a>
     <a href="impressum.html">Impressum</a>
   </nav>
 </header>
@@ -50,7 +50,8 @@
   <div class="portionen-rechner">
   <h3>Zutaten für</h3>
 
-  <input type="number" id="portionen" value="4" min="1" max="20">
+  <input type="number" id="portionen" value="4" min="1" max="20" step="1" inputmode="numeric">
+
 <div class="button">
   <label for="portionen">Portionen</label>
   </div>
@@ -100,75 +101,67 @@
    <h3>Thomas</h3>
 </div>
 
-<footer class="footer">
-      <img class="footer-logo" src="./img/logo.png" alt="Kochwelt Logo" />
-
+<footer class="site-footer">
+        <div class="container footer-inner">
+            <a class="footer-logo" href="#"> <img src="./img/logo.png" alt="Logo"></a>
    
-      <div class="social-media">
-        <a
-          href="https://www.instagram.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            class="social-media-icon"
-            src="./instagram_logo.png"
-            alt="Instagram"
-          />
-        </a>
+            <div class="container social">
+            <a class="social-btn fb" href="#">
+                <span class="social-icon"><img src="./fb.png" alt="facebook"></span>
+            </a>
+            
+            <a class="social-btn ig" href="#">
+                <span class="social-icon"><img src="./ig.png" alt="instagram"></span>
+            </a>
 
-        <a
-          href="https://de-de.facebook.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            class="social-media-icon"
-            src="./facebook_logo.png"
-            alt="Facebook"
-          />
-        </a>
-      </div>
+            <a class="social-btn tw" href="#">
+                <span class="social-icon"><img src="./twitter.png" alt="twitter"></span>
+            </a>  
+          </div>
+        </div>
     </footer>
 
   <script>
-  const portionenInput = document.getElementById("portionen");
-  const zutaten = document.querySelectorAll("#zutaten li");
-  const basisPortionen = 4;
+const portionenInput = document.getElementById("portionen");
+const zutaten = document.querySelectorAll("#zutaten li");
+const basisPortionen = 4;
 
-  portionenInput.addEventListener("input", () => {
-    let neuePortionen = Number(portionenInput.value);
+function updateZutaten(neuePortionen) {
+  zutaten.forEach(zutat => {
+    const basisMenge = zutat.dataset.menge;
+    if (!basisMenge) return;
 
-    // Begrenzen auf 1–20
-    if (neuePortionen < 1) neuePortionen = 1;
-    if (neuePortionen > 20) neuePortionen = 20;
+    const einheit = zutat.dataset.einheit || "";
+    const name = zutat.dataset.name || "";
 
-    // korrigierten Wert zurück ins Input schreiben
-    portionenInput.value = neuePortionen;
+    let neueMenge = (basisMenge / basisPortionen) * neuePortionen;
 
-    zutaten.forEach(zutat => {
-      const basisMenge = zutat.dataset.menge;
-      const einheit = zutat.dataset.einheit;
+    neueMenge = Math.round(neueMenge);
 
-      if (!basisMenge) return;
-
-      const neueMenge = (basisMenge / basisPortionen) * neuePortionen;
-
-      const gerundet = Number.isInteger(neueMenge)
-        ? neueMenge
-        : neueMenge.toFixed(1);
-
-      zutat.textContent = `${gerundet} ${einheit} ${zutat.textContent.replace(/^[\d.,]+\s*\w*\s*/, "")}`;
-
-      const name = zutat.dataset.name;
-
-zutat.textContent = einheit
-  ? `${gerundet} ${einheit} ${name}`
-  : `${gerundet} ${name}`;
-    });
+    zutat.textContent = einheit
+      ? `${neueMenge} ${einheit} ${name}`
+      : `${neueMenge} ${name}`;
   });
-</script>
+}
 
+portionenInput.addEventListener("change", () => {
+  let value = portionenInput.value;
+
+  if (value === "") {
+    portionenInput.value = basisPortionen;
+    updateZutaten(basisPortionen);
+    return;
+  }
+
+  let neuePortionen = Math.round(Number(value));
+
+  if (neuePortionen < 1) neuePortionen = 1;
+  if (neuePortionen > 20) neuePortionen = 20;
+
+  portionenInput.value = neuePortionen;
+  updateZutaten(neuePortionen);
+});
+</script>
 
     
 </body>
