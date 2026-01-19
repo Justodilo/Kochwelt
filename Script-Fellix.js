@@ -1,3 +1,64 @@
+const navToggle = document.getElementById("navToggle");
+const navOverlay = document.getElementById("navOverlay");
+const mobileMenu = document.getElementById("mobileMenu");
+
+function openMenu() {
+  if (!navToggle || !navOverlay || !mobileMenu) return;
+
+  navToggle.classList.add("is-open");
+  navOverlay.classList.add("is-open");
+  mobileMenu.classList.add("is-open");
+
+  navOverlay.hidden = false;
+  mobileMenu.hidden = false;
+
+  //scroll lock site background
+  document.body.style.overflow = "hidden";
+}
+
+function closeMenu() {
+  if (!navToggle || !navOverlay || !mobileMenu) return;
+
+  navToggle.classList.remove("is-open");
+  navOverlay.classList.remove("is-open");
+  mobileMenu.classList.remove("is-open");
+
+  //scroll unlock site background
+  document.body.style.overflow = "";
+
+  //wait for animation end then hide elements
+  setTimeout(() => {
+    navOverlay.hidden = true;
+    mobileMenu.hidden = true;
+  }, 125);
+}
+
+function toggleMenu() {
+  const isOpen = navToggle.classList.contains("is-open");
+  if (isOpen) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+}
+
+if (navToggle && navOverlay && mobileMenu) {
+  navToggle.addEventListener("click", toggleMenu);
+  navOverlay.addEventListener("click", closeMenu);
+
+  //ESC key closes menu
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && navToggle.classList.contains("is-open")) {
+      closeMenu();
+    }
+  });
+  
+  //clicking a link in the mobile menu closes the menu
+  mobileMenu.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+}
+
 const basePortion = 1;
 
 const portionsInput = document.getElementById("portionsInput");
