@@ -425,6 +425,29 @@ height: 16px;
 }
 
 /* =========================
+   Impressum SEKTIONEN
+   ========================= */
+.impressum-text {
+  font-family: "Raleway", sans-serif;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 500;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.impressum-title {
+  margin: clamp(18px, 4vw, 38px) 0 18px;
+  font-size: clamp(25px, 4vw, 44px);
+  letter-spacing: .2px;
+  text-align: justify;
+}
+
+.impressum-text h2 {
+  margin-left: 0;
+  margin-right: 0;
+  font-size: clamp(18px, 3vw, 24px);
+}
+/* =========================
    STARTSEITE SEKTIONEN
    ========================= */
 .section {
