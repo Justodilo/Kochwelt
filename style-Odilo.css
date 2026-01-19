@@ -420,7 +420,7 @@ height: 16px;
 
 /* Hover */
 .social-btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-6px);
   opacity: 0.9;
 }
 
@@ -461,8 +461,8 @@ height: 16px;
 
 .section-title-index{
   margin:0 0 30px;
-  font-size: clamp(20px, 2.8vw, 28px);
-  font-weight: 550;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 700;
   text-align: center;
 }
 
@@ -497,6 +497,7 @@ height: 16px;
   margin: 0 0 18px;
   color: var(--muted);
   line-height: 1.55;
+  font-size: clamp(14px, 1.6vw, 20px);
   text-align: justify;
 }
 
@@ -529,6 +530,12 @@ height: 16px;
 .card {
   text-decoration: none;
   color: inherit;
+}
+
+.card:hover .card-media {
+  box-shadow: 0 12px 32px rgba(0,0,0,.12);
+  transform: translateY(-12px);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .card-media {
@@ -566,6 +573,7 @@ height: 16px;
   margin: 0;
   color: var(--muted);
   line-height: 1.65;
+  font-size: clamp(14px, 1.6vw, 20px);
   text-align: justify;
 }
 
