@@ -175,28 +175,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kontaktformular</title>
+    <link rel="stylesheet" href="./style-Odilo.css" />
+    <link rel="icon" href="./img/logo_small.png">
   </head>
 
   <body>
-    <header>
-      <div class="header">
-        <div>
-          <a href="index.html">
-            <img src="./img/logo.png" alt="Kochwelt Überschrift" />
-          </a>
-        </div>
+      <header class="site-header">
+          <div class="container header-inner">
+              <a class="brand" href="./index.html">
+                  <span class="web-logo"><img class="web-logo img" src="./logo.png" alt="Logo"></span>
+              </a>
 
-        <div class="menue">
-          <a href="index.html">Start</a>
-          <a href="index.html">Rezept des Tages</a>
-          <a href="Kontakt Formular.html">Kontakt</a>
-          <a href="impressum.html">Impressum</a>
-        </div>
-      </div>
+              <button class="nav-toggle" id="navToggle" type="button">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </button>
 
-      <main>
+              <nav class="nav nav-desktop">
+                  <a class="nav-link" href="./index.html#">Start</a>
+                  <a class="nav-link" href="./index.html#recipe">Rezept des Tages</a>
+                  <a class="nav-link is-active" href="./Kontakt Formular.html">Kontakt</a>
+                  <a class="nav-link" href="./impressum.html">Impressum</a>
+              </nav>
+          </div>
+          <div class="nav-overlay" id="navOverlay" hidden></div>
+
+          <nav class="nav-drawer" id="mobileMenu" hidden>
+              <a class="nav-link" href="./index.html#">Start</a>
+              <a class="nav-link" href="./index.html#recipe">Rezept des Tages</a>
+              <a class="nav-link is-active" href="./Kontakt Formular.html">Kontakt</a>
+              <a class="nav-link" href="./impressum.html">Impressum</a>
+          </nav>
+      </header>
+
+      <main class="container">
         <div class="Kontaktformular">
-          <h3 class="kontact-us">Kontaktiere uns</h3>
+          <h3 class="contact-us">Kontaktiere uns</h3>
 
           <form id="contactForm">
             <label class="lable">Dein Name:</label><br />
@@ -211,10 +226,7 @@
             <input class="submit" type="submit" value="Abschicken" />
           </form>
 
-          <p
-            id="successMsg"
-            style="display: none; text-align: center; margin-top: 15px"
-          >
+          <p id="successMsg" class="success-message">
             Nachricht wurde abgeschickt
           </p>
         </div>
@@ -248,6 +260,67 @@
       </div>
     </footer>
     <script>
+
+      const navToggle = document.getElementById("navToggle");
+      const navOverlay = document.getElementById("navOverlay");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      function openMenu() {
+        if (!navToggle || !navOverlay || !mobileMenu) return;
+
+        navToggle.classList.add("is-open");
+        navOverlay.classList.add("is-open");
+        mobileMenu.classList.add("is-open");
+
+        navOverlay.hidden = false;
+        mobileMenu.hidden = false;
+
+        //scroll lock site background
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeMenu() {
+        if (!navToggle || !navOverlay || !mobileMenu) return;
+
+        navToggle.classList.remove("is-open");
+        navOverlay.classList.remove("is-open");
+        mobileMenu.classList.remove("is-open");
+
+        //scroll unlock site background
+        document.body.style.overflow = "";
+
+        //wait for animation end then hide elements
+        setTimeout(() => {
+          navOverlay.hidden = true;
+          mobileMenu.hidden = true;
+        }, 125);
+      }
+
+      function toggleMenu() {
+        const isOpen = navToggle.classList.contains("is-open");
+        if (isOpen) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      }
+
+      if (navToggle && navOverlay && mobileMenu) {
+        navToggle.addEventListener("click", toggleMenu);
+        navOverlay.addEventListener("click", closeMenu);
+
+        //ESC key closes menu
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && navToggle.classList.contains("is-open")) {
+            closeMenu();
+          }
+        });
+        
+        //clicking a link in the mobile menu closes the menu
+        mobileMenu.querySelectorAll(".nav-link").forEach((link) => {
+          link.addEventListener("click", closeMenu);
+        });
+      }
       var form = document.getElementById("contactForm");
       var msg = document.getElementById("successMsg");
 
