@@ -112,8 +112,7 @@ body {
 
 .HeadlineZubereitung {
     font-family: "Raleway", sans-serif;
-    margin-left: 50px;
-    margin-right: 50px;
+    
     margin-top: 20px;
     font-size: 35px;
     font-family: "Raleway", sans-serif;
@@ -124,72 +123,56 @@ body {
 .ZubereitungInfo {
     display: flex;
     justify-content: left;
-    margin-left: 50px;
     margin-top: 20px;
 }
 
-.ZubereitungPill {
-    display: inline-flex;
-    align-items: center;
-    white-space: nowrap;
-    padding: 0 12px;
-    height: 40px;
-    border-radius: 8px;
-    background-color: #D3D3D3;
-    margin-right: 10px;
-    font-family: "Raleway", sans-serif;
+.chip{
+  margin-right: 10px;
 }
 
 
- .Zutaten {
+/* Zutaten-Block */
+.Zutaten {
   display: flex;
   flex-direction: column;
-  text-indent: 15px;
+  /* text-indent: 15px;  <-- weg damit, sonst verschiebt es nach rechts */
+  text-indent: 0;
+  margin-top: 24px;      /* nur nach oben Abstand, nicht links/rechts */
 }
 
+/* Portionenrechner sitzt schon in .Zutaten -> keine 50px mehr */
 .portionen-rechner {
   display: flex;
-  align-items: center;      /* gleiche Höhe */
-  font-family: 'Raleway';
-  margin: 30px 50px 0px 50px;
-  padding-top: 8px;
-  border-top: 1px solid #eee; 
-
-}
-
-.portionen-rechner h3 {
-  margin-right: 10px;               
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.portionen-rechner input {
-  width: 50px;
-  padding: 4px;
-  text-align: center;
-      height: 24px;
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
-      border: 1px solid #eee; 
-      border-radius: 10px;
-}
-
-.portionen-rechner label {
-  white-space: nowrap;      /* verhindert Umbruch */
-}
-
-
-
-#zutaten {
-  list-style: none; 
+  align-items: center;
   font-family: "Raleway", sans-serif;
+  margin: 30px 0 0 0;     /* nur oben Abstand */
+  padding-top: 8px;
+  border-top: 1px solid #eee;
 }
-li {
-    padding: 6px 6px 6px 10px;
-    border-radius: 4px;
-    font-family: "Raleway", sans-serif;
-    margin-right: 50px;
+
+/* Zutatenliste */
+#zutaten {
+  list-style: none;
+  padding-left: 0;        /* bündig mit Container */
+  margin: 8px 0 0 0;
 }
+
+#zutaten li {
+  padding: 10px 10px 10px 16px;
+  border-radius: 4px;
+  font-family: "Raleway", sans-serif;
+  margin-right: 8px;
+}
+
+#portionen{
+  width: 50px;
+  height: 33px;
+  border-radius: 6px;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+
 #portionen-btn {
   background-color: green;
   border: none;
@@ -200,7 +183,11 @@ li {
   border-radius: 6px;
 }
 .Antleitung{
-    font-family: "Raleway", sans-serif;
-    margin-left: 20px;
-    margin-right: 20px;
+   
+  margin: 20px 0 0;
+  text-align: justify;
+  line-height: 1.65;
+  color: #2b2b2b;
 }
+    
+
