@@ -137,6 +137,7 @@ if (portionsBtn) {
 }
 
 if (portionsInput) {
+  portionsInput.addEventListener("gotpointercapture", update);
   portionsInput.addEventListener("keydown", function (e) {
     if (e.key === "Enter") update();
   });

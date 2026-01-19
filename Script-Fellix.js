@@ -182,7 +182,7 @@ function update() {
 if (portionsBtn) portionsBtn.addEventListener("click", update);
 
 if (portionsInput) {
-  portionsInput.addEventListener("change", update);
+  portionsInput.addEventListener("gotpointercapture", update);
   portionsInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") update();
   });
