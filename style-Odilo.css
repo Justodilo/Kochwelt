@@ -10,7 +10,7 @@
   --green-dark: #086021;
   --light-green: #00b71b;
 
-  --card: #f2f2f2;
+  --card: #dad5d5;
   --shadow: 0 8px 24px rgba(0,0,0,.08);
   --radius: 12px;
 }
@@ -590,6 +590,87 @@ height: 16px;
   object-fit: cover;
   display: block;
 }
+
+/* =========================
+   Kontaktformular SEKTIONEN
+   ========================= */
+  
+.success-message {
+  display: none;
+  margin-top: 20px;
+  color: var(--green);
+  font-weight: 700;
+  font-size: x-large;
+  background-color: var(--chip);
+  text-align: center;
+}
+
+.Kontaktformular {
+    background-color: var(--card);
+    border-radius: 20px;
+    max-width: 800px;
+    margin: 100px auto 0;
+    padding: 40px;
+  }
+
+  .contact-us {
+    font-size: clamp(24px, 4vw, 40px);
+    font-weight: 600;
+    padding: 18px 0;
+    margin: 0;
+  }
+
+  .lable {
+    font-weight: 550;
+    display: inline-block;
+    padding: 5px 0;
+    font-size: clamp(16px, 2.5vw, 20px);
+  }
+
+  .input,
+  .input-note {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    padding: 10px 12px;
+    font-size: clamp(14px, 1.6vw, 18px);
+    font-family: inherit;
+  }
+
+  .input {
+    height: 40px;
+  }
+
+  .input-note {
+    min-height: 160px;
+    resize: vertical;
+  }
+
+  .input:focus,
+  .input-note:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(11, 122, 43, 0.15);
+  }
+
+  .submit {
+    background-color: var(--green);
+    color: #fff;
+    display: block;
+    align-items: center;
+    border: none;
+    border-radius: 6px;
+    height: clamp(30px, 5vw, 48px);
+    width: clamp(120px, 30%, 200px);
+    font-size: clamp(16px, 2.5vw, 20px);
+    display: block;
+    margin: 20px auto 0;
+    cursor: pointer;
+  }
+  .submit:hover {
+    background-color: var(--green-dark);  
+    transform: translateY(-4px);
+  }
 
 /* Responsive */
 @media (max-width: 420px){
