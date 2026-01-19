@@ -10,7 +10,8 @@
   --green-dark: #086021;
   --light-green: #00b71b;
 
-  --card: #dad5d5;
+  --card:#f0f0f0;
+  --contact: #dad5d5;
   --shadow: 0 8px 24px rgba(0,0,0,.08);
   --radius: 12px;
 }
@@ -606,7 +607,7 @@ height: 16px;
 }
 
 .Kontaktformular {
-    background-color: var(--card);
+    background-color: var(--contact);
     border-radius: 20px;
     max-width: 800px;
     margin: 100px auto 0;
