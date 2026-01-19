@@ -1,23 +1,15 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apfelstrudel</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="Style-Felix.css">
-   <link rel="stylesheet" href="./style-Odilo.css" /> 
-
+    <title>Kochwelt - Apfelstrudel</title>
+    <link rel="icon" href="./img/logo_small.png">
+    <link rel="stylesheet" href="./style-Odilo.css" /> 
+   
 </head>
-
 <body>
-
-      <header class="site-header">
+    <header class="site-header">
         <div class="container header-inner">
              <a class="brand" href="./index.html">
                 <span class="web-logo"><img class="web-logo img" src="./logo.png" alt="Logo"></span>
@@ -30,8 +22,8 @@
             </button>
 
             <nav class="nav nav-desktop">
-                <a class="nav-link" href="./index.html">Start</a>
-                <a class="nav-link is-active" href="#">Rezept des Tages</a>
+                <a class="nav-link" href="./index.html#">Start</a>
+                <a class="nav-link is-active" href="./index.html#recipe">Rezept des Tages</a>
                 <a class="nav-link" href="./Kontakt Formular.html">Kontakt</a>
                 <a class="nav-link" href="./impressum.html">Impressum</a>
             </nav>
@@ -39,13 +31,13 @@
         <div class="nav-overlay" id="navOverlay" hidden></div>
 
         <nav class="nav-drawer" id="mobileMenu" hidden>
-            <a class="nav-link" href="./index.html">Start</a>
-            <a class="nav-link is-active" href="#">Rezept des Tages</a>
+            <a class="nav-link" href="./index.html#">Start</a>
+            <a class="nav-link is-active" href="./index.html#recipe">Rezept des Tages</a>
             <a class="nav-link" href="./Kontakt Formular.html">Kontakt</a>
             <a class="nav-link" href="./impressum.html">Impressum</a>
         </nav>
     </header>
-     <main class="container page">
+    <main class="container page">
         <h1 class="page-title">Apfelstrudel</h1>
         <section class="food"> 
             <img class="food-img" src="./alt-wiener-apfelstrudel.jpg" alt="Apfelstrudel">
@@ -57,53 +49,43 @@
             <div class="chip"><span class="chip-icon"><img src="./img/icons/calendar-alt-regular.svg" alt="Datum"></span><span>08.01.2026</span></div>
         </section>
 
-        <div class="Zutaten">
-            <div class="portionen-rechner">
-                <h3>Zutaten für</h3>
-
-                <input type="number" id="portionen" value="1" min="1" max="20">
-                <div class="button">
-                    <button id="portionen-btn" type="button">Portionen</button>
+        <section class="ingredients">
+            <div class="ingredients-head">
+                <div class="portion-controls">
+                    <label class="portion-label" for="portionsInput">Zutaten für</label>
+                    <input class="portion-input" type="number" id="portionsInput" value="1" min="1" max="20">
+                    <button id="portionsBtn" class="portion-btn" type="button">Portionen</button>
                 </div>
             </div>
-            <ul id="zutaten">
-                <li data-menge="250" data-einheit="g" data-name="Mehl" style="background-color: #eee;">250 g Mehl (glatt)</li>
-                <li data-menge="60" data-einheit="ml" data-name="Öl">60 ml Öl</li>
-                <li data-menge="1" data-einheit="TL" data-name="Essig" style="background-color: #eee;">1 TL Essig</li>
-                <li data-menge="1" data-einheit="TL" data-name="Salz">1/4 TL Salz</li>
-                <li data-menge="125" data-einheit="ml" data-name="Wasser" style="background-color: #eee;">125 ml Wasser
-                </li>
-                <h3>Zutaten für die Füllung</h3>
-                <li data-menge="100" data-einheit="g" data-name="Butter" style="background-color: #eee;">100 g Butter</li>
-                <li data-menge="80" data-einheit="g" data-name="Brösel">80 g Brösel</li>
-                <li data-menge="50" data-einheit="g" data-name="Nüsse (gerieben)" style="background-color: #eee;">50 g
-                    Nüsse (gerieben)</li>
-                <li data-menge="1" data-einheit="Kg" data-name="Äpfel(säuerlich)">1 Kg Äpfel (säuerlich)</li>
-                <li data-menge="50" data-einheit="g" data-name="Butter (zum Betäufeln)" style="background-color: #eee;">
-                    50g Butter (zum Betäufeln)</li>
-                <li data-menge="100" data-einheit="g" data-name="Kristallzucker">100 g Kristallzucker</li>
-                <li data-menge="50" data-einheit="g" data-name="Rosinen" style="background-color: #eee;">50 g Rosinen
-                </li>
-                <li data-menge="2" data-einheit="TL" data-name="Zimt (Menge nach Beliebig)">2 TL Zimt (Menge Beliebig)
-                </li>
+            <ul class="ingredients-list" id="ingredientsList">
+                <li data-menge="250" data-einheit="g" data-name="Mehl"></li>
+                <li data-menge="60" data-einheit="ml" data-name="Öl"></li>
+                <li data-menge="1" data-einheit="TL" data-name="Essig"></li>
+                <li data-menge="0.25" data-einheit="TL" data-name="Salz"></li>
+                <li data-menge="125" data-einheit="ml" data-name="Wasser"></li>
+
+                <li class="ingredients-heading">Zutaten für die Füllung</li>
+
+                <li data-menge="100" data-einheit="g" data-name="Butter"></li>
+                <li data-menge="80" data-einheit="g" data-name="Brösel"></li>
+                <li data-menge="50" data-einheit="g" data-name="Nüsse" data-note="(gerieben)"></li>
+                <li data-menge="1" data-einheit="Kg" data-name="Äpfel" data-note="(säuerlich)"></li>
+                <li data-menge="50" data-einheit="g" data-name="Butter" data-note="(zum Betäufeln)"></li>
+                <li data-menge="100" data-einheit="g" data-name="Kristallzucker"></li>
+                <li data-menge="50" data-einheit="g" data-name="Rosinen"></li>
+                <li data-menge="2" data-einheit="TL" data-name="Zimt" data-note="(Menge nach Beliebig)"></li>
             </ul>
-        </div>
+        </section>
+        <section class="prep">
+            <h2 class="section-title">Zubereitung</h2>
+                <div class="chip">
+                    <span class="chip-icon"><img src="./img/icons/clock-regular.svg" alt="Zeit"></span><span>ca. 30 Minuten</span>
+                </div>
+                <div class="chip">
+                    <span class="chip-icon"><img src="./img/icons/clock-regular.svg" alt="Zeit"></span><span>Gesamtzeit ca. 1h</span>
+                </div>
 
-        <div class="HeadlineZubereitung">Zubereitung</div>
-
-        <div class="ZubereitungInfo">
-            <div class="chip">
-                <img class="pill_icon" src="./img/icons/clock-regular.svg">
-                <span>ca. 30 Min.</span>
-            </div>
-
-            <div class="chip">
-                <img class="pill_icon" src="./img/icons/clock-regular.svg">
-                <span>Gesamtzeit ca. 1h</span>
-            </div>
-        </div>
-
-        <ul class="Antleitung">
+        <ul class="prep-text">
             <li>Für den Teig das Mehl auf ein Nudelbrett sieben, in der Mitte eine Grube machen, mit einem Messer
                 Öl, Essig,
                 Salz, Ei und nach und nach lauwarmes Wasser einrühren.</li>
@@ -133,6 +115,7 @@
                 für ca.
                 30-40 Minuten bei Ober- und Unterhitze backen.</li>
         </ul>
+        </section>
          <section class="author">
             <h3 class="author-title">Rezept erstellt von</h3>
             <div class="author-card">
