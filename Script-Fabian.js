@@ -1,4 +1,3 @@
-
 const navToggle = document.getElementById("navToggle");
 const navOverlay = document.getElementById("navOverlay");
 const mobileMenu = document.getElementById("mobileMenu");
@@ -66,6 +65,7 @@ let ingredients = [
 ];
 
 let portionsInput = document.getElementById("portionsInput");
+
 const portionsBtn = document.getElementById("portionsBtn");
 const ingredientsList = document.getElementById("ingredientsList");
 
@@ -119,7 +119,8 @@ function getPortionsSafe() {
 
   let raw = Number(portionsInput.value);
 
-  if (!isFinite(raw) || raw < 1) return base_portion;
+  if (!isFinite(raw) || raw < 1) raw = 1;
+  if (raw > 20) raw = 20;
 
   return Math.floor(raw);
 }
@@ -136,7 +137,6 @@ if (portionsBtn) {
 }
 
 if (portionsInput) {
-  portionsInput.addEventListener("change", update);
   portionsInput.addEventListener("keydown", function (e) {
     if (e.key === "Enter") update();
   });
