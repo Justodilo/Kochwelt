@@ -136,10 +136,9 @@ function getPortionsSafe() {
 
   let raw = Number(portionsInput.value);
 
-  // Ungültig oder < 1 => Default (kein 0, -n, " ", n.n,)
-  if (!isFinite(raw) || raw < 1) return base_portion;
+  if (!isFinite(raw) || raw < 1) raw = 1;
+  if (raw > 20) raw = 20;
 
-  // Ganze Portionen erzwingen
   return Math.floor(raw);
 }
 
@@ -158,7 +157,6 @@ if (portionsBtn) {
 }
 
 if (portionsInput) {
-  portionsInput.addEventListener("change", update);
   portionsInput.addEventListener("keydown", function (e) {
     if (e.key === "Enter") update();
   });
