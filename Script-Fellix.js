@@ -59,11 +59,10 @@ if (navToggle && navOverlay && mobileMenu) {
   });
 }
 
-const basePortion = 1;
-
 const portionsInput = document.getElementById("portionsInput");
 const portionsBtn = document.getElementById("portionsBtn");
 const ingredientsList = document.getElementById("ingredientsList");
+const basePortion = Number(ingredientsList.dataset.basePortion) || 1;
 
 // 1) Li-Daten aus dem HTML einsammeln -> Array
 function readIngredientsFromDOM(listEl) {
