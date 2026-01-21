@@ -1,146 +1,100 @@
-const navToggle = document.getElementById("navToggle");
-const navOverlay = document.getElementById("navOverlay");
-const mobileMenu = document.getElementById("mobileMenu");
+var navToggle = document.getElementById("navToggle");
+var navOverlay = document.getElementById("navOverlay");
+var mobileMenu = document.getElementById("mobileMenu");
 
-function openMenu() {
-  if (!navToggle || !navOverlay || !mobileMenu) return;
+navToggle.onclick = function () {
+  if (mobileMenu.classList.contains("is-open")) {
+    navToggle.classList.remove("is-open");
+    navOverlay.classList.remove("is-open");
+    mobileMenu.classList.remove("is-open");
+    navOverlay.hidden = true;
+    mobileMenu.hidden = true;
+    document.body.style.overflow = "";
+  } else {
+    navToggle.classList.add("is-open");
+    navOverlay.classList.add("is-open");
+    mobileMenu.classList.add("is-open");
+    navOverlay.hidden = false;
+    mobileMenu.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+};
 
-  navToggle.classList.add("is-open");
-  navOverlay.classList.add("is-open");
-  mobileMenu.classList.add("is-open");
-
-  navOverlay.hidden = false;
-  mobileMenu.hidden = false;
-
-  document.body.style.overflow = "hidden";
-}
-
-function closeMenu() {
-  if (!navToggle || !navOverlay || !mobileMenu) return;
-
+navOverlay.onclick = function () {
   navToggle.classList.remove("is-open");
   navOverlay.classList.remove("is-open");
   mobileMenu.classList.remove("is-open");
-
+  navOverlay.hidden = true;
+  mobileMenu.hidden = true;
   document.body.style.overflow = "";
+};
 
-  setTimeout(() => {
+var links = mobileMenu.querySelectorAll(".nav-link");
+for (var i = 0; i < links.length; i++) {
+  links[i].onclick = function () {
+    navToggle.classList.remove("is-open");
+    navOverlay.classList.remove("is-open");
+    mobileMenu.classList.remove("is-open");
     navOverlay.hidden = true;
     mobileMenu.hidden = true;
-  }, 125);
+    document.body.style.overflow = "";
+  };
 }
 
-function toggleMenu() {
-  const isOpen = navToggle.classList.contains("is-open");
-  if (isOpen) closeMenu();
-  else openMenu();
-}
+document.onkeydown = function (e) {
+  if (e.key === "Escape") {
+    navToggle.classList.remove("is-open");
+    navOverlay.classList.remove("is-open");
+    mobileMenu.classList.remove("is-open");
+    navOverlay.hidden = true;
+    mobileMenu.hidden = true;
+    document.body.style.overflow = "";
+  }
+};
 
-if (navToggle && navOverlay && mobileMenu) {
-  navToggle.addEventListener("click", toggleMenu);
-  navOverlay.addEventListener("click", closeMenu);
+var portionsInput = document.getElementById("portionsInput");
+var portionsBtn = document.getElementById("portionsBtn");
+var ingredientsList = document.getElementById("ingredientsList");
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && navToggle.classList.contains("is-open")) {
-      closeMenu();
-    }
-  });
-
-  mobileMenu.querySelectorAll(".nav-link").forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-}
-
-const base_portion = 1;
-
-let ingredients = [
-  { qty: 800, unit: "g", name: "Chicken Wings" },
-  { qty: 2, unit: "g", name: "Salz" },
-  { qty: 200, unit: "ml", name: "Dunkle Sojasoße" },
-  { qty: 10, unit: "g", name: "Ingwerpulver" },
-  { qty: 10, unit: "ml", name: "Reisweinessig" },
-  { qty: 1, unit: "EL", name: "Honig" },
-  { qty: 1, unit: "EL", name: "Maisstärke" },
-  { qty: 5, unit: "EL", name: "warmes Wasser" },
+var ingredients = [
+  [800, "g", "Chicken Wings"],
+  [2, "g", "Salz"],
+  [200, "ml", "Dunkle Sojasoße"],
+  [10, "g", "Ingwerpulver"],
+  [10, "ml", "Reisweinessig"],
+  [1, "EL", "Honig"],
+  [1, "EL", "Maisstärke"],
+  [5, "EL", "warmes Wasser"]
 ];
 
-let portionsInput = document.getElementById("portionsInput");
+portionsInput.oninput = function () {
+  portionsInput.value = portionsInput.value.replace(/[^0-9]/g, "");
+};
 
-const portionsBtn = document.getElementById("portionsBtn");
-const ingredientsList = document.getElementById("ingredientsList");
+portionsBtn.onclick = function () {
+  var portions = Number(portionsInput.value);
 
-function formatNumber(n) {
-  if (Number.isInteger(n)) return String(n);
-  return String(parseFloat(n.toFixed(2)));
-}
+  if (!portions) portions = 1;
+  if (portions < 1) portions = 1;
+  if (portions > 20) portions = 20;
 
-function scaleQty(qty, portions) {
-  if (qty === null) return null;
-  return (qty / base_portion) * portions;
-}
+  portionsInput.value = portions;
 
-function renderIngredients(portions) {
-  if (!ingredientsList) return;
+  ingredientsList.innerHTML = "";
 
-  let html = "";
+  for (var i = 0; i < ingredients.length; i++) {
+    var amount = ingredients[i][0] * portions;
+    var unit = ingredients[i][1];
+    var name = ingredients[i][2];
 
-  for (let i = 0; i < ingredients.length; i++) {
-    let ing = ingredients[i];
-    let scaledQty = scaleQty(ing.qty, portions);
-
-    let qtyText = "";
-    if (scaledQty !== null) {
-      qtyText = formatNumber(scaledQty);
-      if (ing.unit) qtyText = qtyText + " " + ing.unit;
-    }
-
-    html =
-      html +
-      '<li class="ingredient-item">' +
-      '<div class="ingredient-left">' +
-      '<div class="qty">' +
-      qtyText +
-      "</div>" +
-      '<div class="ing-name">' +
-      ing.name +
-      "</div>" +
-      '<div class="note">' +
-      (ing.note || " ") +
-      "</div>" +
+    ingredientsList.innerHTML +=
+      "<li class='ingredient-item'>" +
+      "<div class='ingredient-left'>" +
+      "<div class='qty'>" + amount + " " + unit + "</div>" +
+      "<div class='ing-name'>" + name + "</div>" +
       "</div>" +
       "</li>";
   }
+};
 
-  ingredientsList.innerHTML = html;
-}
-
-function getPortionsSafe() {
-  if (!portionsInput) return base_portion;
-
-  let raw = Number(portionsInput.value);
-
-  if (!isFinite(raw) || raw < 1) raw = 1;
-  if (raw > 20) raw = 20;
-
-  return Math.floor(raw);
-}
-
-function update() {
-  let portions = getPortionsSafe();
-
-  if (portionsInput) portionsInput.value = portions;
-  renderIngredients(portions);
-}
-
-if (portionsBtn) {
-  portionsBtn.addEventListener("click", update);
-}
-
-if (portionsInput) {
-  portionsInput.addEventListener("gotpointercapture", update);
-  portionsInput.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") update();
-  });
-}
-
-update();
+portionsBtn.onclick();
