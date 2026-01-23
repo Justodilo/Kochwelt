@@ -1,4 +1,4 @@
-/*Header*/
+
 html,
 body {
   height: 100%;
@@ -16,44 +16,7 @@ body {
   justify-content: space-between;
   align-items: end;
   height: 120px;
-  box-shadow: 0 6px 10px -6px rgba(127, 127, 127, 0.876);
-}
-.header img {
-  width: auto;
-  height: 80px;
-  margin-bottom: 10px;
-  margin-left: 50px;
-}
-.Strudel_img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-.menue {
-  display: flex;
-  justify-content: center;
-  gap: 45px;
-  font-family: "Raleway", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 20px;
-  text-decoration: none;
-  color: rgb(4, 4, 4);
-  margin-right: 50px;
-}
-.menue a {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-}
-.menue a:hover {
-  color: rgb(0, 128, 0);
-  text-decoration: underline;
-  text-underline-offset: 20px;
-  text-decoration-thickness: 5px;
-}
 
-/*Main*/
 .Info {
     display: flex;
     flex-direction: column;
@@ -118,8 +81,6 @@ body {
     font-family: "Raleway", sans-serif;
 }
 
-
-
 .ZubereitungInfo {
     display: flex;
     justify-content: left;
@@ -130,30 +91,25 @@ body {
   margin-right: 10px;
 }
 
-
-/* Zutaten-Block */
 .Zutaten {
   display: flex;
   flex-direction: column;
-  /* text-indent: 15px;  <-- weg damit, sonst verschiebt es nach rechts */
   text-indent: 0;
-  margin-top: 24px;      /* nur nach oben Abstand, nicht links/rechts */
+  margin-top: 24px;      
 }
 
-/* Portionenrechner sitzt schon in .Zutaten -> keine 50px mehr */
 .portionen-rechner {
   display: flex;
   align-items: center;
   font-family: "Raleway", sans-serif;
-  margin: 30px 0 0 0;     /* nur oben Abstand */
+  margin: 30px 0 0 0;     
   padding-top: 8px;
   border-top: 1px solid #eee;
 }
 
-/* Zutatenliste */
 #zutaten {
   list-style: none;
-  padding-left: 0;        /* bündig mit Container */
+  padding-left: 0;       
   margin: 8px 0 0 0;
 }
 
@@ -171,7 +127,6 @@ body {
   margin-right: 8px;
   margin-left: 8px;
 }
-
 
 #portionen-btn {
   background-color: green;
