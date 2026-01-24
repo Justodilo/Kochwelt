@@ -18,7 +18,7 @@
           </span>
         </a>
 
-        <button class="nav-toggle" id="navToggle" type="button">
+        <button class="nav-toggle" id="navToggle" type="button" onclick="toggleMenu()">
           <span></span>
           <span></span>
           <span></span>
@@ -32,7 +32,7 @@
         </nav>
       </div>
 
-      <div class="nav-overlay" id="navOverlay" hidden></div>
+      <div class="nav-overlay" id="navOverlay" onclick="closeMenu()" hidden></div>
 
       <nav class="nav-drawer" id="mobileMenu" hidden>
         <a class="nav-link" href="./index.html#">Start</a>
@@ -98,44 +98,53 @@
     </footer>
 
     <script>
-      const navToggle = document.getElementById("navToggle");
-      const navOverlay = document.getElementById("navOverlay");
-      const mobileMenu = document.getElementById("mobileMenu");
+      
+//Burger Menu Funktionen
 
-      function openMenu() {
-        navToggle.classList.add("is-open");
-        navOverlay.classList.add("is-open");
-        mobileMenu.classList.add("is-open");
-        navOverlay.hidden = false;
-        mobileMenu.hidden = false;
-        document.body.style.overflow = "hidden";
-      }
+const navToggle = document.getElementById("navToggle");
+const navOverlay = document.getElementById("navOverlay");
+const mobileMenu = document.getElementById("mobileMenu");
 
-      function closeMenu() {
-        navToggle.classList.remove("is-open");
-        navOverlay.classList.remove("is-open");
-        mobileMenu.classList.remove("is-open");
-        document.body.style.overflow = "";
-        setTimeout(function () {
-          navOverlay.hidden = true;
-          mobileMenu.hidden = true;
-        }, 125);
-      }
+function openMenu() {
+  if (!navToggle || !navOverlay || !mobileMenu) return;
 
-      navToggle.onclick = function () {
-        if (mobileMenu.classList.contains("is-open")) closeMenu();
-        else openMenu();
-      };
+  navToggle.classList.add("is-open");
+  navOverlay.classList.add("is-open");
+  mobileMenu.classList.add("is-open");
 
-      navOverlay.onclick = closeMenu;
+  navOverlay.hidden = false;
+  mobileMenu.hidden = false;
 
-      document.onkeydown = function (e) {
-        if (e.key === "Escape") closeMenu();
-      };
+  //scroll lock site background
+  document.body.style.overflow = "hidden";
+}
 
-      mobileMenu.querySelectorAll(".nav-link").forEach(function (link) {
-        link.onclick = closeMenu;
-      });
+function closeMenu() {
+  if (!navToggle || !navOverlay || !mobileMenu) return;
+
+  navToggle.classList.remove("is-open");
+  navOverlay.classList.remove("is-open");
+  mobileMenu.classList.remove("is-open");
+
+  //scroll unlock site background
+  document.body.style.overflow = "";
+
+  setTimeout(() => {
+    navOverlay.hidden = true;
+    mobileMenu.hidden = true;
+  }, 125);
+}
+
+function toggleMenu() {
+  const isOpen = navToggle.classList.contains("is-open");
+  if (isOpen) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+}
+
+//Kontaktformular Funktionalität
 
       var form = document.getElementById("contactForm");
       var msg = document.getElementById("successMsg");

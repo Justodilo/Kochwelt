@@ -11,11 +11,11 @@
 <body>
     <header class="site-header">
         <div class="container header-inner">
-             <a class="brand" href="./index.html">
+            <a class="brand" href="./index.html">
                 <span class="web-logo"><img class="web-logo img" src="./logo.png" alt="Logo"></span>
             </a>
 
-            <button class="nav-toggle" id="navToggle" type="button">
+            <button class="nav-toggle" id="navToggle" type="button" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -28,7 +28,7 @@
                 <a class="nav-link" href="./impressum.html">Impressum</a>
             </nav>
         </div>
-        <div class="nav-overlay" id="navOverlay" hidden></div>
+        <div class="nav-overlay" id="navOverlay" onclick="closeMenu()" hidden></div>
 
         <nav class="nav-drawer" id="mobileMenu" hidden>
             <a class="nav-link" href="./index.html#">Start</a>
@@ -52,11 +52,25 @@
          <div class="ingredients-head">
            <div class="portion-controls">
             <label class="portion-label" for="portionsInput">Zutaten für</label>
-            <input id="portionsInput" class="portion-input" type="number" min="1" step="1" value="2" />
-            <button id="portionsBtn" class="portion-btn" type="button">Portionen</button>
+            <input id="portionsInput" class="portion-input" type="number" min="1" step="1" value="2" onkeydown="if(event.key==='Enter') update()"/>
+            <button id="portionsBtn" class="portion-btn" type="button" onclick="update()">Portionen</button>
            </div>
          </div>
-        <ul class="ingredients-list" id="ingredientsList" ></ul>
+        <ul class="ingredients-list" id="ingredientsList" data-base-portion="2">
+            <li class="ingredient-item" data-qty= "350" data-unit="g" data-name="gekochter kalter Reis" data-note="(am besten vom Vortag, Jasminreis)"></li>
+            <li class="ingredient-item" data-qty="2" data-unit="Stk" data-name="Ei(er)"></li>
+            <li class="ingredient-item" data-qty="150" data-unit="g" data-name="Hähnchenfleisch oder Garnelen" data-note="(optional)"></li>
+            <li class="ingredient-item" data-qty="3" data-unit="EL" data-name="Rapsöl"></li>
+            <li class="ingredient-item" data-qty="2" data-unit="Stk" data-name="Schalotte(n)"></li>
+            <li class="ingredient-item" data-qty="2" data-unit="Stk" data-name="Knoblauchzeh(en)"></li>
+            <li class="ingredient-item" data-qty="1" data-unit="Stk" data-name="kleine Rote Chili" data-note="(nach Schärfewunsch, optional Chiliflocken)"></li>
+            <li class="ingredient-item" data-qty="0.5" data-unit="TL" data-name="Terasi" data-note="(Indonesische Shrimppaste, optional)"></li>
+            <li class="ingredient-item" data-qty="0.25" data-unit="TL" data-name="Salz"></li>
+            <li class="ingredient-item" data-qty="2" data-unit="EL" data-name="Kecap Manis" data-note="(süße indonesische Sojasoße)"></li>
+            <li class="ingredient-item" data-qty="1" data-unit="TL" data-name="helle Sojasoße"></li>
+            <li class="ingredient-item" data-qty="0.5" data-unit="EL" data-name="Oystersoße"></li>
+            <li class="ingredient-item" data-qty="" data-unit="" data-name="Weißer Pfeffer"></li>
+        </ul>
         </section>
         <section class="prep">
             <h2 class="section-title">Zubereitung</h2>

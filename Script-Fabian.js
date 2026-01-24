@@ -1,56 +1,49 @@
-var navToggle = document.getElementById("navToggle");
-var navOverlay = document.getElementById("navOverlay");
-var mobileMenu = document.getElementById("mobileMenu");
+//Burger Menu Funktionen
 
-navToggle.onclick = function () {
-  if (mobileMenu.classList.contains("is-open")) {
-    navToggle.classList.remove("is-open");
-    navOverlay.classList.remove("is-open");
-    mobileMenu.classList.remove("is-open");
-    navOverlay.hidden = true;
-    mobileMenu.hidden = true;
-    document.body.style.overflow = "";
-  } else {
-    navToggle.classList.add("is-open");
-    navOverlay.classList.add("is-open");
-    mobileMenu.classList.add("is-open");
-    navOverlay.hidden = false;
-    mobileMenu.hidden = false;
-    document.body.style.overflow = "hidden";
-  }
-};
+const navToggle = document.getElementById("navToggle");
+const navOverlay = document.getElementById("navOverlay");
+const mobileMenu = document.getElementById("mobileMenu");
 
-navOverlay.onclick = function () {
+function openMenu() {
+  if (!navToggle || !navOverlay || !mobileMenu) return;
+
+  navToggle.classList.add("is-open");
+  navOverlay.classList.add("is-open");
+  mobileMenu.classList.add("is-open");
+
+  navOverlay.hidden = false;
+  mobileMenu.hidden = false;
+
+  //scroll lock site background
+  document.body.style.overflow = "hidden";
+}
+
+function closeMenu() {
+  if (!navToggle || !navOverlay || !mobileMenu) return;
+
   navToggle.classList.remove("is-open");
   navOverlay.classList.remove("is-open");
   mobileMenu.classList.remove("is-open");
-  navOverlay.hidden = true;
-  mobileMenu.hidden = true;
-  document.body.style.overflow = "";
-};
 
-var links = mobileMenu.querySelectorAll(".nav-link");
-for (var i = 0; i < links.length; i++) {
-  links[i].onclick = function () {
-    navToggle.classList.remove("is-open");
-    navOverlay.classList.remove("is-open");
-    mobileMenu.classList.remove("is-open");
+  //scroll unlock site background
+  document.body.style.overflow = "";
+
+  setTimeout(() => {
     navOverlay.hidden = true;
     mobileMenu.hidden = true;
-    document.body.style.overflow = "";
-  };
+  }, 125);
 }
 
-document.onkeydown = function (e) {
-  if (e.key === "Escape") {
-    navToggle.classList.remove("is-open");
-    navOverlay.classList.remove("is-open");
-    mobileMenu.classList.remove("is-open");
-    navOverlay.hidden = true;
-    mobileMenu.hidden = true;
-    document.body.style.overflow = "";
+function toggleMenu() {
+  const isOpen = navToggle.classList.contains("is-open");
+  if (isOpen) {
+    closeMenu();
+  } else {
+    openMenu();
   }
-};
+}
+
+//PORTIONENRECHNER!!
 
 var portionsInput = document.getElementById("portionsInput");
 var portionsBtn = document.getElementById("portionsBtn");

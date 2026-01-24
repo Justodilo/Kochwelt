@@ -1,3 +1,5 @@
+//Burger Menu Funktionen
+
 const navToggle = document.getElementById("navToggle");
 const navOverlay = document.getElementById("navOverlay");
 const mobileMenu = document.getElementById("mobileMenu");
@@ -26,7 +28,6 @@ function closeMenu() {
   //scroll unlock site background
   document.body.style.overflow = "";
 
-  //wait for animation end then hide elements
   setTimeout(() => {
     navOverlay.hidden = true;
     mobileMenu.hidden = true;
@@ -42,126 +43,76 @@ function toggleMenu() {
   }
 }
 
-if (navToggle && navOverlay && mobileMenu) {
-  navToggle.addEventListener("click", toggleMenu);
-  navOverlay.addEventListener("click", closeMenu);
+//PORTIONENRECHNER!!
 
-  //ESC key closes menu
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && navToggle.classList.contains("is-open")) {
-      closeMenu();
+
+let portions = document.getElementById("portionsInput");
+let portionsBtn = document.getElementById("portionsBtn");
+let ingredients = document.getElementById("ingredientsList");
+let base_portion = Number(ingredients.dataset.basePortion) || 2;
+
+let ingredientData = Array.from(ingredients.getElementsByClassName("ingredient-item")).map(item => {
+    return {
+        qty: item.dataset.qty ? parseFloat(item.dataset.qty) : null,
+        unit: item.dataset.unit || "",
+        name: item.dataset.name || "",
+        note: item.dataset.note || ""
+    };
+});
+
+function update() {
+    let currentPortions = getPortionsSafe();
+
+    if (portions) portions.value = currentPortions;
+    renderIngredients(currentPortions);
+}
+
+function getPortionsSafe() {
+    if (!portions) return base_portion;
+
+    let raw = Number(portions.value);
+
+    if (!isFinite(raw) || raw < 1) raw = 1;
+    if (raw > 20) raw = 20;
+
+    return Math.floor(raw);
+}
+
+function renderIngredients(portions) {
+    if (!ingredients) return;
+
+    let html = "";
+
+    for (let i = 0; i < ingredientData.length; i++) {
+        let ing = ingredientData[i];
+        let scaledQty = scaleQty(ing.qty, portions);
+
+        let qtyText = "";
+        if (scaledQty !== null) {
+            qtyText = formatNumber(scaledQty);
+            if (ing.unit) qtyText += " " + ing.unit;
+        }
+
+        html += `<li class="ingredient-item">
+                    <div class="ingredient-left">
+                        <div class="qty">${qtyText}</div>
+                        <div class="ing-name">${ing.name}</div>
+                        <div class="note">${ing.note || " "}</div>
+                    </div>
+                 </li>`;
     }
-  });
-  
-  //clicking a link in the mobile menu closes the menu
-  mobileMenu.querySelectorAll(".nav-link").forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
+
+    ingredients.innerHTML = html;
 }
 
-const base_portion = 2;
-
-let ingredients = [
-    { qty: 350, unit:"g", name: "gekochter kalter Reis", note: "(am besten vom Vortag, Jasminreis)"},
-    { qty: 2, unit:"Stk", name: "Ei(er)"},
-    { qty: 150, unit:"g", name: "Hähnchenfleisch oder Garnelen", note: "(optional)"},
-    { qty: 3, unit:"EL", name: "Rapsöl"},
-    { qty: 2, unit:"Stk", name: "Schalotte(n)"},
-    { qty: 2, unit:"Stk", name: "Knoblauchzeh(en)"},
-    { qty: 1, unit:"Stk", name: "kleine Rote Chili", note:"(nach Schärfewunsch, optional Chiliflocken)"},
-    { qty: 0.5, unit:"TL", name: "Terasi", note:"(Indonesische Shrimppaste, optional)"},
-    { qty: 0.25, unit:"TL", name: "Salz"},
-    { qty: 2, unit:"EL", name: "Kecap Manis", note:"(süße indonesische Sojasoße)"},
-    { qty: 1, unit:"TL", name: "helle Sojasoße"},
-    { qty: 0.5, unit:"EL", name: "Oystersoße"},
-    { qty: null, unit:"", name: "Weißer Pfeffer"},
-];
-let portionsInput = document.getElementById("portionsInput");
-const portionsBtn = document.getElementById("portionsBtn");
-const ingredientsList = document.getElementById("ingredientsList");
-
-// wenn n eine ganze Zahl dann anzeigen, wenn nicht sowas wie 2.00, dann runden auf 2 kommastellen
-// parsefloat entfernt unnötige Nullen
-function formatNumber(n) {
-    if (Number.isInteger(n)) return String(n);
-     return String(parseFloat(n.toFixed(2)));
-}
-
-function scaleQty(qty,portions) {
+function scaleQty(qty, portions) {
     if (qty === null) return null;
     return (qty / base_portion) * portions;
 }
 
-
-function renderIngredients(portions) {
-  if (!ingredientsList) return;
-
-  let html = "";
-
-  //schleife denn JS fängt von 0 und sollte weitergeben bis alle 'ingredients', ++ =weiter
-  for (let i = 0; i < ingredients.length; i++) {
-    let ing = ingredients[i];
-    let scaledQty = scaleQty(ing.qty, portions);
-
-    let qtyText = ""; //wieder leeren
-    // wenn menge gibt, dann hübsche Zahl anzeigen
-    if (scaledQty !== null) {
-      qtyText = formatNumber(scaledQty);
-    //wenn unit gibt, gern damit
-      if (ing.unit) qtyText = qtyText + " " + ing.unit;
-    }
-
-
-html = html + '<li class="ingredient-item">' +
-                '<div class="ingredient-left">' +
-                    '<div class="qty">' +
-                    qtyText +
-                    '</div>' +
-
-                    '<div class="ing-name">' +
-                     ing.name +
-                    '</div>' +
-
-                    '<div class="note">' +
-                    (ing.note || " ") +
-                    '</div>' +
-                '</div>' +
-              '</li>';
-  }
-
-  ingredientsList.innerHTML = html;
-}
-function getPortionsSafe() {
-  if (!portionsInput) return base_portion;
-
-  let raw = Number(portionsInput.value);
-
-  if (!isFinite(raw) || raw < 1) raw = 1;
-  if (raw > 20) raw = 20;
-
-  return Math.floor(raw);
+function formatNumber(n) {
+    if (Number.isInteger(n)) return String(n);
+    return String(parseFloat(n.toFixed(2)));
 }
 
-function update() {
-// Portionen sauber holen (getPortsafe)
-  let portions = getPortionsSafe();
-
-// falls eingabefeld existiert, schreib die (bereinigte) Zahl wieder ins Eingabefeld
-  if (portionsInput) portionsInput.value = portions;
-  renderIngredients(portions);
-}
-
-/** Events */
-if (portionsBtn) {
-  portionsBtn.addEventListener("click", update);
-}
-
-if (portionsInput) {
-  portionsInput.addEventListener("gotpointercapture", update);
-  portionsInput.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") update();
-  });
-}
-
-/** Initial render */
 update();
