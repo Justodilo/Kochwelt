@@ -49,6 +49,34 @@ const zutaten = document.querySelectorAll("#zutaten li");
 const portionenBtn = document.querySelector("#portionen-btn");
 const basisPortionen = 1;
 
+function renderPortionen() {
+  let value = (portionenInput?.value || "").trim();
+  let neuePortionen = Number(value);
+
+  if (neuePortionen < 1) neuePortionen = 1;
+  if (neuePortionen > 20) neuePortionen = 20;
+
+  portionenInput.value = neuePortionen;
+
+  zutaten.forEach(zutat => {
+    const basisMenge = parseFloat(zutat.dataset.menge);
+    const einheit = zutat.dataset.einheit || "";
+    const name = zutat.dataset.name || "";
+    const note = zutat.dataset.note || "";
+
+    const neueMenge = (basisMenge / basisPortionen) * neuePortionen;
+
+    zutat.innerHTML = `
+      <div class="ingredient-left">
+        <div class="qty">${neueMenge} ${einheit}</div>
+        <div class="ing-name">${name}</div>
+        <div class="note">${zutat.dataset.note || ""}</div>
+      </div>
+    `;
+  });
+}
+
+/** 
 portionenBtn.addEventListener("click", () => {     //So wird es ausgeführt sobald man den Button drückt
 
     let value = portionenInput.value.trim(); //trim entfernt lerzeichen
@@ -67,9 +95,15 @@ portionenBtn.addEventListener("click", () => {     //So wird es ausgeführt soba
         const name = zutat.dataset.name;// Und ich hol mir den Namen
         const neueMenge = (basisMenge / basisPortionen) * neuePortionen; // Basis menge durch Portionen mal eingegeben Portionen
         if (einheit) {
-            zutat.innerHTML = `<span class="menge">${neueMenge} ${einheit}</span> ${name}`; //Wenn einheit einen wert hat dann neue menge
-        }
+            zutat.innerHTML =  
+            `<div class="ingredient-left">
+              <div class="qty">${neueMenge} ${einheit}</div>
+              <div class="ing-name">${name}</div>
+              <div class="note">${zutat.dataset.note || ""}</div>
+            </div> `; //Wenn einheit einen wert hat dann neue menge
+          }
     });
     
 });
 
+*/
