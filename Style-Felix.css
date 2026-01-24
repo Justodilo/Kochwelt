@@ -128,6 +128,10 @@ body {
   margin-right: 8px;
   margin-left: 8px;
 }
+.menge{
+  font-weight: bold;
+  padding-right: 30px;
+}
 
 
 #portionen-btn {
