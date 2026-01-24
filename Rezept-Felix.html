@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apfelstrudel</title>
+    <link rel="icon" href="./img/logo_small.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
@@ -16,30 +17,32 @@
 </head>
 
 <body>
-    <header class="site-header">
+    
+
+      <header class="site-header">
         <div class="container header-inner">
-            <a class="brand" href="./index.html">
+             <a class="brand" href="./index.html">
                 <span class="web-logo"><img class="web-logo img" src="./logo.png" alt="Logo"></span>
             </a>
 
-            <button class="nav-toggle" id="navToggle" type="button" onclick="toggleMenu()">
+            <button class="nav-toggle" id="navToggle" type="button">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
             <nav class="nav nav-desktop">
-                <a class="nav-link" href="./index.html#">Start</a>
-                <a class="nav-link is-active" href="./index.html#recipe">Rezept des Tages</a>
+                <a class="nav-link" href="./index.html">Start</a>
+                <a class="nav-link is-active" href="#">Rezept des Tages</a>
                 <a class="nav-link" href="./Kontakt Formular.html">Kontakt</a>
                 <a class="nav-link" href="./impressum.html">Impressum</a>
             </nav>
         </div>
-        <div class="nav-overlay" id="navOverlay" onclick="closeMenu()" hidden></div>
+        <div class="nav-overlay" id="navOverlay" hidden></div>
 
         <nav class="nav-drawer" id="mobileMenu" hidden>
-            <a class="nav-link" href="./index.html#">Start</a>
-            <a class="nav-link is-active" href="./index.html#recipe">Rezept des Tages</a>
+            <a class="nav-link" href="./index.html">Start</a>
+            <a class="nav-link is-active" href="#">Rezept des Tages</a>
             <a class="nav-link" href="./Kontakt Formular.html">Kontakt</a>
             <a class="nav-link" href="./impressum.html">Impressum</a>
         </nav>
@@ -66,25 +69,33 @@
                 </div>
             </div>
             <ul id="zutaten">
-                <li data-menge="250" data-einheit="g" data-name="Mehl" style="background-color: #eee;">250 g Mehl (glatt)</li>
-                <li data-menge="60" data-einheit="ml" data-name="Öl">60 ml Öl</li>
-                <li data-menge="1" data-einheit="TL" data-name="Essig" style="background-color: #eee;">1 TL Essig</li>
-                <li data-menge="1" data-einheit="TL" data-name="Salz">1 TL Salz</li>
-                <li data-menge="125" data-einheit="ml" data-name="Wasser" style="background-color: #eee;">125 ml Wasser
-                </li>
+                <li data-menge="250" data-einheit="g" data-name="Mehl" style="background-color: #eee;">
+                    <span class="menge"> 250 g </span>Mehl (glatt)</li>
+                <li data-menge="60" data-einheit="ml" data-name="Öl">
+                <span class="menge">60 ml</span> Öl</li>
+                <li data-menge="1" data-einheit="TL" data-name="Essig" style="background-color: #eee;">
+                    <span class="menge">1 TL</span> Essig</li>
+                <li data-menge="1" data-einheit="TL" data-name="Salz">
+                <span class="menge">1 TL</span> Saltz</li>
+                <li data-menge="125" data-einheit="ml" data-name="Wasser" style="background-color: #eee;">
+                <span class="menge">125 ml</span> Wasser</li>
                 <h3>Zutaten für die Füllung</h3>
-                <li data-menge="100" data-einheit="g" data-name="Butter" style="background-color: #eee;">100 g Butter</li>
-                <li data-menge="80" data-einheit="g" data-name="Brösel">80 g Brösel</li>
-                <li data-menge="50" data-einheit="g" data-name="Nüsse (gerieben)" style="background-color: #eee;">50 g
-                    Nüsse (gerieben)</li>
-                <li data-menge="1" data-einheit="Kg" data-name="Äpfel(säuerlich)">1 Kg Äpfel (säuerlich)</li>
+                <li data-menge="100" data-einheit="g" data-name="Butter" style="background-color: #eee;">
+                <span class="menge">100 g</span> Butter</li>
+                <li data-menge="80" data-einheit="g" data-name="Brösel">
+                    <span class="menge">80 g</span> Brösel</li>
+                <li data-menge="50" data-einheit="g" data-name="Nüsse (gerieben)" style="background-color: #eee;">
+                   <span class="menge">50 g</span> Nüsse (gerieben)</li>
+                <li data-menge="1" data-einheit="Kg" data-name="Äpfel(säuerlich)">
+                    <span class="menge">1 Kg</span> Äpfel (säuerlich)</li>
                 <li data-menge="50" data-einheit="g" data-name="Butter (zum Betäufeln)" style="background-color: #eee;">
-                    50g Butter (zum Betäufeln)</li>
-                <li data-menge="100" data-einheit="g" data-name="Kristallzucker">100 g Kristallzucker</li>
-                <li data-menge="50" data-einheit="g" data-name="Rosinen" style="background-color: #eee;">50 g Rosinen
-                </li>
-                <li data-menge="2" data-einheit="TL" data-name="Zimt (Menge nach Beliebig)">2 TL Zimt (Menge Beliebig)
-                </li>
+                    <span class="menge">50 g</span> Butter (zum Betäufeln)</li>
+                <li data-menge="100" data-einheit="g" data-name="Kristallzucker">
+                    <span class="menge">100 g</span> Kristallzucker</li>
+                <li data-menge="50" data-einheit="g" data-name="Rosinen" style="background-color: #eee;">
+                <span class="menge">50 g</span> Rosinen</li>
+                <li data-menge="2" data-einheit="TL" data-name="Zimt (Menge nach Beliebig)">
+                <span class="menge">2 TL</span> Zimt (Menge Beliebig)</li>
             </ul>
         </div>
 
