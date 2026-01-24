@@ -1,117 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kochwelt</title>
 
-     <link rel="stylesheet" href="Style-mockup.css" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="./img/logo_small.png">
-
+    <link rel="stylesheet" href="style-Odilo.css" />
+    <link rel="icon" type="image/png" href="./img/logo_small.png">
 
 </head>
 <body>
+  <header class="site-header">
+        <div class="container header-inner">
+             <a class="brand" href="./index.html">
+                <span class="web-logo"><img class="web-logo img" src="./logo.png" alt="Logo"></span>
+            </a>
 
-    <header class="header">
-  <img class="kochwelt" src="./img/logo.png">
-  <nav class="menu">
-    <a href="#">Start</a>
-    <a href="index.html">Rezept des Tages</a>
-    <a href="./Kontakt Formular.html">Kontakt</a>
-    <a href="impressum.html">Impressum</a>
-  </nav>
-</header>
+            <button class="nav-toggle" id="navToggle" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-<div class="vorschau">
-  <img src="./img/nudeln.jpg" alt="Käsespätzle">
+            <nav class="nav nav-desktop">
+                <a class="nav-link is-active" href="./index.html#">Start</a>
+                <a class="nav-link" href="#recipe">Rezept des Tages</a>
+                <a class="nav-link" href="./Kontakt Formular.html">Kontakt</a>
+                <a class="nav-link" href="./impressum.html">Impressum</a>
+            </nav>
+        </div>
+        <div class="nav-overlay" id="navOverlay" hidden></div>
 
-  <div class="text">
-    <h1>Schnelle Käsespätzle</h1>
-    <h3>Selbstgemachte Käsespätzle wie bei Oma, in nur 45 Minuten zubereitet und mit wenigen Zutaten.</h3>
-    <a class="button" href="./kaesespaetzle.html">Rezept öffnen</a>
-  </div>
-</div>
+        <nav class="nav-drawer" id="mobileMenu" hidden>
+            <a class="nav-link is-active" href="./index.html#">Start</a>
+            <a class="nav-link" href="#recipe">Rezept des Tages</a>
+            <a class="nav-link" href="./Kontakt Formular.html">Kontakt</a>
+            <a class="nav-link" href="./impressum.html">Impressum</a>
+        </nav>
+  </header>
+  <main>
+      <section class="section section-hero">
+        <div class="container hero">
+          <div class="hero-media">
+            <img src="./img/nudeln.jpg" alt="Käse Spätzle" />
+          </div>
 
+          <div class="hero-content">
+            <h1 class="hero-title">Schnelle Käsespätzle</h1>
+            <p class="hero-text">
+              Hausgemachte Käse-Spätzle sind ein echter Klassiker der Alpenküche. Mit wenigen Zutaten, 
+              cremigem Käse und knusprigen Röstzwiebeln gelingt dir in kurzer Zeit ein herzhaftes 
+              Wohlfühlgericht, das immer schmeckt – perfekt für kalte Tage oder wenn es unkompliziert sein soll.
+            </p>
+            <a class="btn" href="./kaesespaetzle.html">Rezept öffnen</a>
+          </div>
+        </div>
+      </section>
 
-<div class="Rezepte">
-  <h2>Lust auf was Neues?</h2>
+      <section id="recipe" class="section section-grid">
+        <div class="container">
+          <h2 class="section-title-index">Lust auf was Neues?</h2>
 
-  <div class="rezepte-grid">
-    <div class="rezept">
-      <a href="./Rezept Fabian.html">
-        <img src="./Headpic.jpeg" alt="Chicken Wings">
-      </a>
-      <p>Chicken Wings</p>
-    </div>
+          <div class="cards">
+            <a class="card" href="./Rezept Fabian.html">
+              <div class="card-media">
+                <img src="./Headpic.jpeg" alt="Teriyaki Chicken Wings" />
+              </div>
+              <div class="card-caption">Teriyaki Chicken Wings</div>
+            </a>
 
-    <div class="rezept">
-      <a href="./Rezept_nasi-goreng.html">
-        <img src="./nasgor.jpg" alt="Nasi Goreng">
-      </a>
-      <p>Nasi Goreng</p>
-    </div>
+            <a class="card" href="./Rezept_nasi-goreng.html">
+              <div class="card-media">
+                <img src="./nasgor.jpg" alt="Nasi Goreng" />
+              </div>
+              <div class="card-caption">Nasi Goreng</div>
+            </a>
 
-    <div class="rezept">
-      <a href="Apfelstrudel.html">
-        <img src="" alt="Apfelstrudel">
-      </a>
-      <p>Apfelstrudel</p>
-    </div>
+            <a class="card" href="./Rezept-Felix.html">
+              <div class="card-media">
+                <img src="./alt-wiener-apfelstrudel.jpg" alt="Apfelstrudel" />
+              </div>
+              <div class="card-caption">Apfelstrudel</div>
+            </a>
+          </div>
+        </div>
+      </section>
 
-    <div class="rezept">
-      <a href="./kaesespaetzle.html">
-        <img src="./img/nudeln.jpg" alt="">
-      </a>
-      <p>Käse Spätzle</p>
-    </div>
-  </div>
-</div>
+      <section class="section section-article">
+        <div class="container article">
+          <h2 class="section-title-index">Pfanne vs. Wok - Was ist besser?</h2>
 
-<div class="wok">
-  <h2>Pfanne vs. Wok – was ist besser?</h2>
+          <div class="article-grid">
+            <div class="article-text">
+              <p>
+                Ob Pfanne oder Wok – beide Kochgeräte haben ihre eigenen Stärken. 
+                Die klassische Pfanne eignet sich besonders gut für gleichmäßiges 
+                Braten, kurze Garzeiten und Gerichte wie Spätzle, Bratkartoffeln oder 
+                Fleisch. Durch die große, flache Oberfläche lässt sich die Hitze gut 
+                kontrollieren und Zutaten können bequem gewendet werden.
+                <br>
+                <br>
+                Der Wok hingegen spielt seine Vorteile bei hohen Temperaturen aus. 
+                Durch seine runde Form verteilt sich die Hitze sehr schnell, wodurch 
+                Gemüse knackig bleibt und Aromen intensiv erhalten werden. Besonders 
+                für asiatische Gerichte wie Nasi Goreng oder schnelles Anbraten ist der Wok ideal.
+                <br>
+                <br>
+                Welche Variante besser ist, hängt also weniger vom Gerät als vom 
+                Gericht ab. Für Alltagsküche und klassische Rezepte ist die Pfanne meist 
+                die bessere Wahl, während der Wok bei hoher Hitze und kurzen Garzeiten 
+                seine Stärken zeigt.
+              </p>
+            </div>
 
-  <div class="wok-content">
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque nisi eligendi quae autem enim cupiditate dolore expedita reprehenderit aut voluptates modi, tempore adipisci. Saepe consectetur, excepturi ipsa et atque fugit!</p>
-
-    <img src="./img/wok.jpg" alt="Wok">
-  </div>
-
-  <footer class="footer">
-      <img class="footer-logo" src="./img/logo.png" alt="Kochwelt Logo" />
-
-    
-
-      <div class="social-media">
-        <a
-          href="https://www.instagram.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            class="social-media-icon"
-            src="./instagram_logo.png"
-            alt="Instagram"
-          />
+            <div class="article-media">
+              <img src="img/wok.jpg" alt="Wok mit Gemüse" />
+            </div>
+          </div>
+        </div>
+      </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-logo" href="#"> <img src="./img/logo.png" alt="Logo"></a>
+   
+      <div class="container social">
+        <a class="social-btn fb" href="https://www.facebook.com/">
+          <span class="social-icon"><img src="./fb.png" alt="facebook"></span>
+        </a>
+              
+        <a class="social-btn ig" href="https://www.instagram.com/">
+          <span class="social-icon"><img src="./ig.png" alt="instagram"></span>
         </a>
 
-        <a
-          href="https://de-de.facebook.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            class="social-media-icon"
-            src="./facebook_logo.png"
-            alt="Facebook"
-          />
-        </a>
+        <a class="social-btn tw" href="https://x.com/">
+          <span class="social-icon"><img src="./twitter.png" alt="twitter"></span>
+        </a>  
       </div>
-    </footer>
-
+    </div>
+  </footer>
+    <script src="./script-Odilo.js"></script>
 </body>
 </html>
