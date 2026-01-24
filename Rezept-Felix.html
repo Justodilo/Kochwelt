@@ -53,37 +53,37 @@
          <div class="ingredients-head">
            <div class="portion-controls">
             <label class="portion-label" for="portionsInput">Zutaten für</label>
-            <input id="portionen" class="portion-input" type="number" min="1" step="1" value="1" onkeydown="if(event.key==='Enter') update()"/>
+            <input id="portionen" class="portion-input" type="number" min="1" step="1" value="1" onkeydown="if(event.key==='Enter') renderPortionen()"/>
             <button id="portionen-btn" class="portion-btn" type="button" onclick="renderPortionen()">Portionen</button>
            </div>
          </div>
         <ul class="ingredients-list" id="zutaten" data-base-portion="1">
                 <li class="ingredient-item" data-menge="250" data-einheit="g" data-name="Mehl">
-                     250 g </span>Mehl (glatt)</li>
+                     250 g Mehl (glatt)</li>
                 <li class="ingredient-item" data-menge="60" data-einheit="ml" data-name="Öl">
                 60 ml Öl</li>
-                <li class="ingredient-item" data-menge="1" data-einheit="TL" data-name="Essig" style="background-color: #eee;">
+                <li class="ingredient-item" data-menge="1" data-einheit="TL" data-name="Essig">
                     1 TL Essig</li>
                 <li class="ingredient-item" data-menge="1" data-einheit="TL" data-name="Salz">
                 1 TL Saltz</li>
-                <li class="ingredient-item" data-menge="125" data-einheit="ml" data-name="Wasser" style="background-color: #eee;">
+                <li class="ingredient-item" data-menge="125" data-einheit="ml" data-name="Wasser">
                 125 ml Wasser</li>
                 <h3>Zutaten für die Füllung</h3>
-                <li class="ingredient-item" data-menge="100" data-einheit="g" data-name="Butter" style="background-color: #eee;">
+                <li class="ingredient-item" data-menge="100" data-einheit="g" data-name="Butter">
                 100 g Butter</li>
                 <li class="ingredient-item" data-menge="80" data-einheit="g" data-name="Brösel">
                     80 g Brösel</li>
-                <li class="ingredient-item" data-menge="50" data-einheit="g" data-name="Nüsse (gerieben)" style="background-color: #eee;">
+                <li class="ingredient-item" data-menge="50" data-einheit="g" data-name="Nüsse" data-note="(gerieben)">
                    50 g Nüsse (gerieben)</li>
-                <li class="ingredient-item" data-menge="1" data-einheit="Kg" data-name="Äpfel(säuerlich)">
+                <li class="ingredient-item" data-menge="1" data-einheit="Kg" data-name="Äpfel" data-note="(säuerlich)">
                     1 Kg Äpfel (säuerlich)</li>
-                <li class="ingredient-item" data-menge="50" data-einheit="g" data-name="Butter (zum Betäufeln)" style="background-color: #eee;">
+                <li class="ingredient-item" data-menge="50" data-einheit="g" data-name="Butter" data-note="(zum Betäufeln)">
                     50 g Butter (zum Betäufeln)</li>
                 <li class="ingredient-item" data-menge="100" data-einheit="g" data-name="Kristallzucker">
                     100 g Kristallzucker</li>
-                <li class="ingredient-item" data-menge="50" data-einheit="g" data-name="Rosinen" style="background-color: #eee;">
+                <li class="ingredient-item" data-menge="50" data-einheit="g" data-name="Rosinen" style=">
                 50 g Rosinen</li>
-                <li class="ingredient-item" data-menge="2" data-einheit="TL" data-name="Zimt (Menge nach Beliebig)">
+                <li class="ingredient-item" data-menge="2" data-einheit="TL" data-name="Zimt" data-note="(Menge Beliebig)">
                 2 TL Zimt (Menge Beliebig)</li>
             </ul>
         </section>
