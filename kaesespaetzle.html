@@ -112,7 +112,43 @@
         </div>
      </div>
 </footer>
-  <script src="./Script-Fellix.js"></script>
+  <script>
+  const portionenInput = document.getElementById("portionen");
+  const zutaten = document.querySelectorAll("#zutaten li");
+  const basisPortionen = 4;
+
+  portionenInput.addEventListener("input", () => {
+    let neuePortionen = Number(portionenInput.value);
+
+    // Begrenzen auf 1–20
+    if (neuePortionen < 1) neuePortionen = 1;
+    if (neuePortionen > 20) neuePortionen = 20;
+
+    // korrigierten Wert zurück ins Input schreiben
+    portionenInput.value = neuePortionen;
+
+    zutaten.forEach(zutat => {
+      const basisMenge = zutat.dataset.menge;
+      const einheit = zutat.dataset.einheit;
+
+      if (!basisMenge) return;
+
+      const neueMenge = (basisMenge / basisPortionen) * neuePortionen;
+
+      const gerundet = Number.isInteger(neueMenge)
+        ? neueMenge
+        : neueMenge.toFixed(1);
+
+      zutat.textContent = `${gerundet} ${einheit} ${zutat.textContent.replace(/^[\d.,]+\s*\w*\s*/, "")}`;
+
+      const name = zutat.dataset.name;
+
+zutat.textContent = einheit
+  ? `${gerundet} ${einheit} ${name}`
+  : `${gerundet} ${name}`;
+    });
+  });
+  </script>
 </body>
 
 </html>
