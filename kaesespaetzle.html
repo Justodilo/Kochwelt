@@ -1,87 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schnelle Käsespätzle</title>
+    <title>Kochwelt - Schnelle Käsespätzle</title>
 
-    <link rel="stylesheet" href="Style-Thomas.css" />
-
-<link rel="icon" type="image/png" href="./img/logo_small.png">
+    <link rel="stylesheet" href="./style-Odilo.css" />
+    <link rel="icon" type="image/png" href="./img/logo_small.png">
 
 </head>
 <body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="./index.html">
+                <span class="web-logo"><img class="web-logo img" src="./logo.png" alt="Logo"></span>
+            </a>
 
-<header class="header">
-  <img class="kochwelt" src="./img/logo.png">
-  <nav class="menu">
-    <a href="#start">Start</a>
-    <a href="index.html">Rezept des Tages</a>
-    <a href="#kontakt">Kontakt</a>
-    <a href="impressum.html">Impressum</a>
-  </nav>
-</header>
+            <button class="nav-toggle" id="navToggle" type="button" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-    <h1>Schnelle Käsespätzle</h1>
-     <div><img class="aot-image" src="./img/nudeln.jpg"></div>
+            <nav class="nav nav-desktop">
+                <a class="nav-link" href="./index.html#">Start</a>
+                <a class="nav-link is-active" href="./index.html#recipe">Rezept des Tages</a>
+                <a class="nav-link" href="./Kontakt Formular.html">Kontakt</a>
+                <a class="nav-link" href="./impressum.html">Impressum</a>
+            </nav>
+        </div>
+        <div class="nav-overlay" id="navOverlay" onclick="closeMenu()" hidden></div>
 
-     <div class="icon-bar">
-  <div class="icon-box">
-    <img src="./img/icons/clock-regular.svg" alt="Uhr Icon" class="icon">
-    <p>45 Min</p>
-  </div>
+        <nav class="nav-drawer" id="mobileMenu" hidden>
+            <a class="nav-link" href="./index.html#">Start</a>
+            <a class="nav-link is-active" href="./index.html#recipe">Rezept des Tages</a>
+            <a class="nav-link" href="./Kontakt Formular.html">Kontakt</a>
+            <a class="nav-link" href="./impressum.html">Impressum</a>
+        </nav>
+    </header>
+<main class="container page">
+  <h1 class="page-title">Schnelle Käsespätzle</h1>
+  <section class="food"> 
+      <img class="food-img" src="./img/nudeln.jpg" alt="Käsespätzle">
+  </section>
 
-  <div class="icon-box">
-    <img src="./img/icons/brain-solid.svg" alt="Gehirn Icon" class="icon">
-    <p>Mittel</p>
-  </div>
+  <section class="meta">
+    <div class="chip"><span class="chip-icon"> <img src="./img/icons/clock-regular.svg" alt="Zeit"> </span><span>45 Min</span></div>
+    <div class="chip"><span class="chip-icon"><img src="./img/icons/brain-solid.svg" alt="Schwierigkeit"></span><spane>einfach</span></div>
+    <div class="chip"><span class="chip-icon"><img src="./img/icons/calendar-alt-regular.svg" alt="Datum"></span><span>08.01.2026</span></div>
+  </section>
+  <section class="ingredients">
+    <div class="ingredients-head">
+        <div class="portion-controls">
+            <label class="portion-label" for="portionsInput">Zutaten für</label>
+            <input class="portion-input" type="number" id="portionen" value="4" min="1" max="20">
+            <button id="portionsBtn" class="portion-btn" type="button">Portionen</button>
+        </div>
+    </div>
+    <ul class="ingredients-list" id="zutaten" data-base-portion="4">
+        <li data-menge="600" data-einheit="g" data-name="Mehl">600 g Mehl</li>
+        <li data-menge="4" data-einheit="Stk" data-name="Eier">4 Stk Eier</li>
+        <li data-menge="300" data-einheit="ml" data-name="Wasser"> 300 ml Wasser</li>
+        <li data-menge="" data-einheit="" data-name="Salz"> Salz</li>
+        <li data-menge="300" data-einheit="g" data-name="geriebener Käse"> 300 g geriebener Käse</li>
+        <li data-menge="2" data-einheit="Stk" data-name="Zwiebeln"> 2 Stk Zwiebeln</li>
+        <li data-menge="" data-einheit="" data-name="Butter" data-note="zum Anbraten"> Butter zum Anbraten</li>
+    </ul>
+  </section>
+  <section class="prep">
+    <h2 class="section-title">Zubereitung</h2>
+    <div class="chip">
+      <span class="chip-icon"><img src="./img/icons/clock-regular.svg" alt="Zeit"></span><span>ca. 30 Minuten</span>
+    </div>
+    <div class="chip">
+      <span class="chip-icon"><img src="./img/icons/clock-regular.svg" alt="Zeit"></span><span>Gesamtzeit ca. 45 Minuten</span>
+    </div>
 
-  <div class="icon-box">
-    <img src="./img/icons/calendar-alt-regular.svg" alt="Kalender Icon" class="icon">
-    <p>15.06.2024</p>
-  </div>
-</div>
-
-<div class="Zutaten">
-  <div class="portionen-rechner">
-  <h3>Zutaten für</h3>
-
-  <input type="number" id="portionen" value="4" min="1" max="20" step="1" inputmode="numeric">
-
-<div class="button">
-  <label for="portionen">Portionen</label>
-  </div>
-</div>
-  <ul id="zutaten">
-    <li data-menge="600" data-einheit="g" data-name="Mehl" style="background-color: #eee;">600 g Mehl</li>
-    <li data-menge="4" data-einheit="" data-name="Eier"  >4 Eier</li>
-    <li data-menge="300" data-einheit="ml" data-name="Wasser" style="background-color: #eee;">300 ml Wasser</li>
-    <li>Salz</li>
-    <li data-menge="300" data-einheit="g" data-name="geriebener Käse" style="background-color: #eee;">300 g geriebener Käse</li>
-    <li data-menge="2" data-einheit="" data-name="Zwiebeln">2 Zwiebeln</li>
-    <li style="background-color: #eee;">Butter zum Anbraten</li>
-  </ul>
-</div>
-
-
-
-
-    <h2>Zubereitung:</h2>
-
-    <div class="icon-bar">
-  <div class="icon-box">
-    <img src="./img/icons/clock-regular.svg" alt="Uhr Icon" class="icon">
-    <p> ca. 30 Minuten</p>
-  </div>
-
-  <div class="icon-box">
-    <img src="./img/icons/clock-regular.svg" alt="Uhr Icon" class="icon">
-    <p> Gesamtzeit ca. 45 Minuten</p>
-  </div>
-</div>
-
-<div class="Zubereitung">
-    <ol>
+    <ol class="prep-text">
         <li>Mehl, Eier, Wasser und eine Prise Salz zu einem glatten Teig verrühren.</li>
         <li>Den Teig durch eine Spätzlepresse oder ein grobes Sieb in kochendes Salzwasser drücken.</li>
         <li>Die Spätzle sind fertig, wenn sie an die Oberfläche steigen. Mit einer Schaumkelle herausnehmen und abtropfen lassen.</li>
@@ -89,76 +84,71 @@
         <li>Die Spätzle mit dem geriebenen Käse vermengen, bis der Käse geschmolzen ist.</li>
         <li>Die gebratenen Zwiebeln über die Käsespätzle geben und servieren.</li>
     </ol>
+  </section>
+  <section class="author">
+    <h3 class="author-title">Rezept erstellt von</h3>
+    <div class="author-card">
+            <div class="avatar"><img src="./img/ersteller.jpg" alt="avatar"> </div>
+            <div class="author-name">Thomas</div>
     </div>
-
-    <div class="Rezept">Rezept erstellt von </div>
-<div class="ersteller">
-    <img src="./img/ersteller.jpg" alt="Ersteller"> 
-   <h3>Thomas</h3>
-</div>
-
+  </section>
+</main>  
 <footer class="site-footer">
-        <div class="container footer-inner">
-            <a class="footer-logo" href="#"> <img src="./img/logo.png" alt="Logo"></a>
+    <div class="container footer-inner">
+         <a class="footer-logo" href="./index.html"> <img src="./img/logo.png" alt="Logo"></a>
    
-            <div class="container social">
-            <a class="social-btn fb" href="#">
+        <div class="container social">
+        <a class="social-btn fb" href="https://www.facebook.com/">
                 <span class="social-icon"><img src="./fb.png" alt="facebook"></span>
-            </a>
+         </a>
             
-            <a class="social-btn ig" href="#">
+        <a class="social-btn ig" href="https://www.instagram.com/">
                 <span class="social-icon"><img src="./ig.png" alt="instagram"></span>
-            </a>
+        </a>
 
-            <a class="social-btn tw" href="#">
+        <a class="social-btn tw" href="https://x.com/">
                 <span class="social-icon"><img src="./twitter.png" alt="twitter"></span>
-            </a>  
-          </div>
+        </a>  
         </div>
-    </footer>
-
+     </div>
+</footer>
   <script>
-const portionenInput = document.getElementById("portionen");
-const zutaten = document.querySelectorAll("#zutaten li");
-const basisPortionen = 4;
+  const portionenInput = document.getElementById("portionen");
+  const zutaten = document.querySelectorAll("#zutaten li");
+  const basisPortionen = 4;
 
-function updateZutaten(neuePortionen) {
-  zutaten.forEach(zutat => {
-    const basisMenge = zutat.dataset.menge;
-    if (!basisMenge) return;
+  portionenInput.addEventListener("input", () => {
+    let neuePortionen = Number(portionenInput.value);
 
-    const einheit = zutat.dataset.einheit || "";
-    const name = zutat.dataset.name || "";
+    // Begrenzen auf 1–20
+    if (neuePortionen < 1) neuePortionen = 1;
+    if (neuePortionen > 20) neuePortionen = 20;
 
-    let neueMenge = (basisMenge / basisPortionen) * neuePortionen;
+    // korrigierten Wert zurück ins Input schreiben
+    portionenInput.value = neuePortionen;
 
-    neueMenge = Math.round(neueMenge);
+    zutaten.forEach(zutat => {
+      const basisMenge = zutat.dataset.menge;
+      const einheit = zutat.dataset.einheit;
 
-    zutat.textContent = einheit
-      ? `${neueMenge} ${einheit} ${name}`
-      : `${neueMenge} ${name}`;
+      if (!basisMenge) return;
+
+      const neueMenge = (basisMenge / basisPortionen) * neuePortionen;
+
+      const gerundet = Number.isInteger(neueMenge)
+        ? neueMenge
+        : neueMenge.toFixed(1);
+
+      zutat.textContent = `${gerundet} ${einheit} ${zutat.textContent.replace(/^[\d.,]+\s*\w*\s*/, "")}`;
+
+      const name = zutat.dataset.name;
+
+zutat.textContent = einheit
+  ? `${gerundet} ${einheit} ${name}`
+  : `${gerundet} ${name}`;
+    });
   });
-}
-
-portionenInput.addEventListener("change", () => {
-  let value = portionenInput.value;
-
-  if (value === "") {
-    portionenInput.value = basisPortionen;
-    updateZutaten(basisPortionen);
-    return;
-  }
-
-  let neuePortionen = Math.round(Number(value));
-
-  if (neuePortionen < 1) neuePortionen = 1;
-  if (neuePortionen > 20) neuePortionen = 20;
-
-  portionenInput.value = neuePortionen;
-  updateZutaten(neuePortionen);
-});
-</script>
-
-    
+  </script>
 </body>
+
 </html>

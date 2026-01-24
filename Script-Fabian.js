@@ -1,3 +1,4 @@
+//Burger Menu Funktionen
 
 const navToggle = document.getElementById("navToggle");
 const navOverlay = document.getElementById("navOverlay");
@@ -13,6 +14,7 @@ function openMenu() {
   navOverlay.hidden = false;
   mobileMenu.hidden = false;
 
+  //scroll lock site background
   document.body.style.overflow = "hidden";
 }
 
@@ -23,6 +25,7 @@ function closeMenu() {
   navOverlay.classList.remove("is-open");
   mobileMenu.classList.remove("is-open");
 
+  //scroll unlock site background
   document.body.style.overflow = "";
 
   setTimeout(() => {
@@ -33,113 +36,58 @@ function closeMenu() {
 
 function toggleMenu() {
   const isOpen = navToggle.classList.contains("is-open");
-  if (isOpen) closeMenu();
-  else openMenu();
+  if (isOpen) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
 }
 
-if (navToggle && navOverlay && mobileMenu) {
-  navToggle.addEventListener("click", toggleMenu);
-  navOverlay.addEventListener("click", closeMenu);
+//PORTIONENRECHNER!!
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && navToggle.classList.contains("is-open")) {
-      closeMenu();
-    }
-  });
+var portionsInput = document.getElementById("portionsInput");
+var portionsBtn = document.getElementById("portionsBtn");
+var ingredientsList = document.getElementById("ingredientsList");
 
-  mobileMenu.querySelectorAll(".nav-link").forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-}
-
-const base_portion = 1;
-
-let ingredients = [
-  { qty: 800, unit: "g", name: "Chicken Wings" },
-  { qty: 2, unit: "g", name: "Salz" },
-  { qty: 200, unit: "ml", name: "Dunkle Sojasoße" },
-  { qty: 10, unit: "g", name: "Ingwerpulver" },
-  { qty: 10, unit: "ml", name: "Reisweinessig" },
-  { qty: 1, unit: "EL", name: "Honig" },
-  { qty: 1, unit: "EL", name: "Maisstärke" },
-  { qty: 5, unit: "EL", name: "warmes Wasser" },
+var ingredients = [
+  [800, "g", "Chicken Wings"],
+  [2, "g", "Salz"],
+  [200, "ml", "Dunkle Sojasoße"],
+  [10, "g", "Ingwerpulver"],
+  [10, "ml", "Reisweinessig"],
+  [1, "EL", "Honig"],
+  [1, "EL", "Maisstärke"],
+  [5, "EL", "warmes Wasser"]
 ];
 
-let portionsInput = document.getElementById("portionsInput");
-const portionsBtn = document.getElementById("portionsBtn");
-const ingredientsList = document.getElementById("ingredientsList");
+portionsInput.oninput = function () {
+  portionsInput.value = portionsInput.value.replace(/[^0-9]/g, "");
+};
 
-function formatNumber(n) {
-  if (Number.isInteger(n)) return String(n);
-  return String(parseFloat(n.toFixed(2)));
-}
+portionsBtn.onclick = function () {
+  var portions = Number(portionsInput.value);
 
-function scaleQty(qty, portions) {
-  if (qty === null) return null;
-  return (qty / base_portion) * portions;
-}
+  if (!portions) portions = 1;
+  if (portions < 1) portions = 1;
+  if (portions > 20) portions = 20;
 
-function renderIngredients(portions) {
-  if (!ingredientsList) return;
+  portionsInput.value = portions;
 
-  let html = "";
+  ingredientsList.innerHTML = "";
 
-  for (let i = 0; i < ingredients.length; i++) {
-    let ing = ingredients[i];
-    let scaledQty = scaleQty(ing.qty, portions);
+  for (var i = 0; i < ingredients.length; i++) {
+    var amount = ingredients[i][0] * portions;
+    var unit = ingredients[i][1];
+    var name = ingredients[i][2];
 
-    let qtyText = "";
-    if (scaledQty !== null) {
-      qtyText = formatNumber(scaledQty);
-      if (ing.unit) qtyText = qtyText + " " + ing.unit;
-    }
-
-    html =
-      html +
-      '<li class="ingredient-item">' +
-      '<div class="ingredient-left">' +
-      '<div class="qty">' +
-      qtyText +
-      "</div>" +
-      '<div class="ing-name">' +
-      ing.name +
-      "</div>" +
-      '<div class="note">' +
-      (ing.note || " ") +
-      "</div>" +
+    ingredientsList.innerHTML +=
+      "<li class='ingredient-item'>" +
+      "<div class='ingredient-left'>" +
+      "<div class='qty'>" + amount + " " + unit + "</div>" +
+      "<div class='ing-name'>" + name + "</div>" +
       "</div>" +
       "</li>";
   }
+};
 
-  ingredientsList.innerHTML = html;
-}
-
-function getPortionsSafe() {
-  if (!portionsInput) return base_portion;
-
-  let raw = Number(portionsInput.value);
-
-  if (!isFinite(raw) || raw < 1) return base_portion;
-
-  return Math.floor(raw);
-}
-
-function update() {
-  let portions = getPortionsSafe();
-
-  if (portionsInput) portionsInput.value = portions;
-  renderIngredients(portions);
-}
-
-if (portionsBtn) {
-  portionsBtn.addEventListener("click", update);
-}
-
-if (portionsInput) {
-  portionsInput.addEventListener("change", update);
-  portionsInput.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") update();
-  });
-}
-
-update();
+portionsBtn.onclick();

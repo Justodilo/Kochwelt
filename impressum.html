@@ -17,7 +17,7 @@
                 <span class="web-logo"><img class="web-logo img" src="./logo.png" alt="Logo"></span>
             </a>
 
-            <button class="nav-toggle" id="navToggle" type="button">
+            <button class="nav-toggle" id="navToggle" type="button" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -30,7 +30,7 @@
                 <a class="nav-link is-active" href="./impressum.html">Impressum</a>
             </nav>
         </div>
-        <div class="nav-overlay" id="navOverlay" hidden></div>
+        <div class="nav-overlay" id="navOverlay" onclick="closeMenu()" hidden></div>
 
         <nav class="nav-drawer" id="mobileMenu" hidden>
             <a class="nav-link" href="./index.html">Start</a>

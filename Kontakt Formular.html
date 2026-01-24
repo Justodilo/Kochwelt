@@ -1,262 +1,171 @@
-<style>
-  html,
-  body {
-    height: 100%;
-    margin: 0;
-  }
-
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    height: 120px;
-    box-shadow: 0 6px 10px -6px rgba(127, 127, 127, 0.876);
-  }
-
-  .header img {
-    width: auto;
-    height: 80px;
-    margin-bottom: 10px;
-    margin-left: 50px;
-  }
-
-  img {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-
-  .menue {
-    display: flex;
-    justify-content: center;
-    gap: 45px;
-    font-family: "Raleway", sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 20px;
-    text-decoration: none;
-    color: rgb(4, 4, 4);
-    margin-right: 50px;
-  }
-
-  .menue a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-  }
-
-  .menue a:hover {
-    color: rgb(0, 128, 0);
-    text-decoration: underline;
-    text-underline-offset: 20px;
-    text-decoration-thickness: 5px;
-  }
-
-  .Kontaktformular {
-    background-color: #d3d3d3;
-    border-radius: 20px;
-    max-width: 400px;
-    margin: 100 auto;
-    /* mittig auf der Seite */
-    padding: 40px;
-    /* Abstand innen */
-  }
-
-  .kontact-us {
-    font-family: "Raleway", sans-serif;
-    font-size: 30px;
-    font-weight: 80;
-    margin: -20 0 24px 0;
-  }
-
-  .lable {
-    font-family: "Raleway", sans-serif;
-    font-weight: 5;
-    display: inline-block;
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
-
-  .input {
-    width: 380px;
-    border-radius: 5px;
-    border: none;
-    height: 30px;
-  }
-
-  .input-note {
-    width: 380px;
-    height: 180px;
-    border-radius: 5px;
-    border: none;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    resize: none;
-  }
-
-  .submit {
-    font-family: "Raleway", sans-serif;
-    background-color: green;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    border: none;
-    height: 30px;
-    width: 150px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-  }
-
-  .site-footer {
-    background: #222;
-    color: #fff;
-    padding: 18px 0;
-  }
-
-  .footer-inner {
-    max-width: 1200px;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .footer-logo img {
-    height: clamp(52px, 6vw, 75px);
-    width: auto;
-    filter: invert(1) brightness(1.2);
-  }
-
-  .social {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .social-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    transition:
-      transform 0.15s ease,
-      opacity 0.15s ease;
-  }
-
-  .social-btn img {
-    height: clamp(26px, 4vw, 40px);
-    width: auto;
-    display: block;
-  }
-
-  /* Hover */
-  .social-btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-  }
-  #successMsg {
-    color: green;
-    font-weight: 600;
-  }
-</style>
-
 <!doctype html>
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kontaktformular</title>
+    <link rel="stylesheet" href="./style-Odilo.css" />
+    <link rel="icon" href="./img/logo_small.png">
   </head>
 
   <body>
-    <header>
-      <div class="header">
-        <div>
-          <a href="index.html">
-            <img src="./img/logo.png" alt="Kochwelt Überschrift" />
-          </a>
-        </div>
+    
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./index.html">
+          <span class="web-logo">
+            <img class="web-logo img" src="./logo.png" alt="Logo">
+          </span>
+        </a>
 
-        <div class="menue">
-          <a href="index.html">Start</a>
-          <a href="index.html">Rezept des Tages</a>
-          <a href="Kontakt Formular.html">Kontakt</a>
-          <a href="impressum.html">Impressum</a>
-        </div>
+        <button class="nav-toggle" id="navToggle" type="button" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav nav-desktop">
+          <a class="nav-link" href="./index.html#">Start</a>
+          <a class="nav-link" href="./index.html#recipe">Rezept des Tages</a>
+          <a class="nav-link is-active" href="./Kontakt Formular.html">Kontakt</a>
+          <a class="nav-link" href="./impressum.html">Impressum</a>
+        </nav>
       </div>
 
-      <main>
-        <div class="Kontaktformular">
-          <h3 class="kontact-us">Kontaktiere uns</h3>
+      <div class="nav-overlay" id="navOverlay" onclick="closeMenu()" hidden></div>
 
-          <form id="contactForm">
-            <label class="lable">Dein Name:</label><br />
-            <input class="input" type="text" id="name" required /><br />
-
-            <label class="lable">Deine E-Mail:</label><br />
-            <input class="input" type="email" id="email" required /><br /><br />
-
-            <label class="lable">Deine Nachricht:</label><br />
-            <textarea class="input-note" id="message" required></textarea>
-
-            <input class="submit" type="submit" value="Abschicken" />
-          </form>
-
-          <p
-            id="successMsg"
-            style="display: none; text-align: center; margin-top: 15px"
-          >
-            Nachricht wurde abgeschickt
-          </p>
-        </div>
-      </main>
+      <nav class="nav-drawer" id="mobileMenu" hidden>
+        <a class="nav-link" href="./index.html#">Start</a>
+        <a class="nav-link" href="./index.html#recipe">Rezept des Tages</a>
+        <a class="nav-link is-active" href="./Kontakt Formular.html">Kontakt</a>
+        <a class="nav-link" href="./impressum.html">Impressum</a>
+      </nav>
     </header>
+
+    <main class="container">
+      <div class="Kontaktformular">
+        <h3 class="contact-us">Kontaktiere uns</h3>
+
+        <form
+          id="contactForm"
+          action="https://formspree.io/f/xnjpnpyy"
+          method="POST"
+        >
+          <label class="lable">Dein Name:</label><br />
+          <input class="input" type="text" name="name" required /><br />
+
+          <label class="lable">Deine E-Mail:</label><br />
+          <input class="input" type="email" name="email" required /><br /><br />
+
+          <label class="lable">Deine Nachricht:</label><br />
+          <textarea class="input-note" name="message" required></textarea>
+
+          <input class="submit" type="submit" value="Abschicken" />
+        </form>
+
+        <p id="successMsg" class="success-message" style="display:none;">
+          Nachricht wurde abgeschickt
+        </p>
+      </div>
+    </main>
+
     <footer class="site-footer">
       <div class="container footer-inner">
         <a class="footer-logo" href="./index.html">
-          <img src="./img/logo.png" alt="Logo"
-        /></a>
+          <img src="./img/logo.png" alt="Logo">
+        </a>
 
         <div class="container social">
           <a class="social-btn fb" href="https://www.facebook.com/">
-            <span class="social-icon"
-              ><img src="./fb.png" alt="facebook"
-            /></span>
+            <span class="social-icon">
+              <img src="./fb.png" alt="facebook">
+            </span>
           </a>
 
           <a class="social-btn ig" href="https://www.instagram.com/">
-            <span class="social-icon"
-              ><img src="./ig.png" alt="instagram"
-            /></span>
+            <span class="social-icon">
+              <img src="./ig.png" alt="instagram">
+            </span>
           </a>
 
           <a class="social-btn tw" href="https://x.com/">
-            <span class="social-icon"
-              ><img src="./twitter.png" alt="twitter"
-            /></span>
+            <span class="social-icon">
+              <img src="./twitter.png" alt="twitter">
+            </span>
           </a>
         </div>
       </div>
     </footer>
+
     <script>
+      
+//Burger Menu Funktionen
+
+const navToggle = document.getElementById("navToggle");
+const navOverlay = document.getElementById("navOverlay");
+const mobileMenu = document.getElementById("mobileMenu");
+
+function openMenu() {
+  if (!navToggle || !navOverlay || !mobileMenu) return;
+
+  navToggle.classList.add("is-open");
+  navOverlay.classList.add("is-open");
+  mobileMenu.classList.add("is-open");
+
+  navOverlay.hidden = false;
+  mobileMenu.hidden = false;
+
+  //scroll lock site background
+  document.body.style.overflow = "hidden";
+}
+
+function closeMenu() {
+  if (!navToggle || !navOverlay || !mobileMenu) return;
+
+  navToggle.classList.remove("is-open");
+  navOverlay.classList.remove("is-open");
+  mobileMenu.classList.remove("is-open");
+
+  //scroll unlock site background
+  document.body.style.overflow = "";
+
+  setTimeout(() => {
+    navOverlay.hidden = true;
+    mobileMenu.hidden = true;
+  }, 125);
+}
+
+function toggleMenu() {
+  const isOpen = navToggle.classList.contains("is-open");
+  if (isOpen) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+}
+
+//Kontaktformular Funktionalität
+
       var form = document.getElementById("contactForm");
       var msg = document.getElementById("successMsg");
 
       form.onsubmit = function (e) {
         e.preventDefault();
 
-        msg.style.display = "block";
-        form.reset();
+        fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            "Accept": "application/json"
+          }
+        }).then(function (response) {
+          if (response.ok) {
+            msg.style.display = "block";
+            form.reset();
+          }
+        });
       };
     </script>
+
   </body>
 </html>

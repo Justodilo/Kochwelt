@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 
-=======
-/*Header*/
->>>>>>> bb2dc40 (Update and rename Apfelstrudel.css to Style-Felix.css)
 html,
 body {
   height: 100%;
@@ -14,54 +10,13 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-<<<<<<< HEAD
-
-=======
 /*
 .header {
   display: flex;
   justify-content: space-between;
   align-items: end;
   height: 120px;
-  box-shadow: 0 6px 10px -6px rgba(127, 127, 127, 0.876);
-}
-.header img {
-  width: auto;
-  height: 80px;
-  margin-bottom: 10px;
-  margin-left: 50px;
-}
-.Strudel_img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-.menue {
-  display: flex;
-  justify-content: center;
-  gap: 45px;
-  font-family: "Raleway", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 20px;
-  text-decoration: none;
-  color: rgb(4, 4, 4);
-  margin-right: 50px;
-}
-.menue a {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-}
-.menue a:hover {
-  color: rgb(0, 128, 0);
-  text-decoration: underline;
-  text-underline-offset: 20px;
-  text-decoration-thickness: 5px;
-}
 
-/*Main*/
->>>>>>> bb2dc40 (Update and rename Apfelstrudel.css to Style-Felix.css)
 .Info {
     display: flex;
     flex-direction: column;
@@ -120,23 +75,15 @@ body {
 
 .HeadlineZubereitung {
     font-family: "Raleway", sans-serif;
-<<<<<<< HEAD
     
-=======
-    margin-left: 50px;
-    margin-right: 50px;
->>>>>>> bb2dc40 (Update and rename Apfelstrudel.css to Style-Felix.css)
     margin-top: 20px;
     font-size: 35px;
     font-family: "Raleway", sans-serif;
 }
 
-
-
 .ZubereitungInfo {
     display: flex;
     justify-content: left;
-<<<<<<< HEAD
     margin-top: 20px;
 }
 
@@ -144,26 +91,21 @@ body {
   margin-right: 10px;
 }
 
-
-
 .Zutaten {
   display: flex;
   flex-direction: column;
-  
   text-indent: 0;
-  margin-top: 24px;    
+  margin-top: 24px;      
 }
-
 
 .portionen-rechner {
   display: flex;
   align-items: center;
   font-family: "Raleway", sans-serif;
-  margin: 30px 0 0 0;    
+  margin: 30px 0 0 0;     
   padding-top: 8px;
   border-top: 1px solid #eee;
 }
-
 
 #zutaten {
   list-style: none;
@@ -185,80 +127,7 @@ body {
   margin-right: 8px;
   margin-left: 8px;
 }
-.menge{
-  font-weight: bold;
-  padding-right: 30px;
-}
 
-
-=======
-    margin-left: 50px;
-    margin-top: 20px;
-}
-
-.ZubereitungPill {
-    display: inline-flex;
-    align-items: center;
-    white-space: nowrap;
-    padding: 0 12px;
-    height: 40px;
-    border-radius: 8px;
-    background-color: #D3D3D3;
-    margin-right: 10px;
-    font-family: "Raleway", sans-serif;
-}
-
-
- .Zutaten {
-  display: flex;
-  flex-direction: column;
-  text-indent: 15px;
-}
-
-.portionen-rechner {
-  display: flex;
-  align-items: center;      /* gleiche Höhe */
-  font-family: 'Raleway';
-  margin: 30px 50px 0px 50px;
-  padding-top: 8px;
-  border-top: 1px solid #eee; 
-
-}
-
-.portionen-rechner h3 {
-  margin-right: 10px;               
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.portionen-rechner input {
-  width: 50px;
-  padding: 4px;
-  text-align: center;
-      height: 24px;
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
-      border: 1px solid #eee; 
-      border-radius: 10px;
-}
-
-.portionen-rechner label {
-  white-space: nowrap;      /* verhindert Umbruch */
-}
-
-
-
-#zutaten {
-  list-style: none; 
-  font-family: "Raleway", sans-serif;
-}
-li {
-    padding: 6px 6px 6px 10px;
-    border-radius: 4px;
-    font-family: "Raleway", sans-serif;
-    margin-right: 50px;
-}
->>>>>>> bb2dc40 (Update and rename Apfelstrudel.css to Style-Felix.css)
 #portionen-btn {
   background-color: green;
   border: none;
@@ -269,7 +138,6 @@ li {
   border-radius: 6px;
 }
 .Antleitung{
-<<<<<<< HEAD
    
   margin: 20px 0 0;
   text-align: justify;
@@ -278,9 +146,3 @@ li {
 }
     
 
-=======
-    font-family: "Raleway", sans-serif;
-    margin-left: 20px;
-    margin-right: 20px;
-}
->>>>>>> bb2dc40 (Update and rename Apfelstrudel.css to Style-Felix.css)
