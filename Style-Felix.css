@@ -10,12 +10,6 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-/*
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  height: 120px;
 
 .Info {
     display: flex;
@@ -33,6 +27,7 @@ body {
     margin-bottom: 20px;
     font-family: "Raleway", sans-serif;
 }
+
 
 .Strudel_img {
     border-radius: 25px;
@@ -81,6 +76,8 @@ body {
     font-family: "Raleway", sans-serif;
 }
 
+
+
 .ZubereitungInfo {
     display: flex;
     justify-content: left;
@@ -91,21 +88,26 @@ body {
   margin-right: 10px;
 }
 
+
+
 .Zutaten {
   display: flex;
   flex-direction: column;
+  
   text-indent: 0;
-  margin-top: 24px;      
+  margin-top: 24px;    
 }
+
 
 .portionen-rechner {
   display: flex;
   align-items: center;
   font-family: "Raleway", sans-serif;
-  margin: 30px 0 0 0;     
+  margin: 30px 0 0 0;    
   padding-top: 8px;
   border-top: 1px solid #eee;
 }
+
 
 #zutaten {
   list-style: none;
@@ -127,6 +129,11 @@ body {
   margin-right: 8px;
   margin-left: 8px;
 }
+.menge{
+  font-weight: bold;
+  padding-right: 30px;
+}
+
 
 #portionen-btn {
   background-color: green;
