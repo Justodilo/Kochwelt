@@ -53,18 +53,18 @@
     <div class="ingredients-head">
         <div class="portion-controls">
             <label class="portion-label" for="portionsInput">Zutaten für</label>
-            <input class="portion-input" type="number" id="portionen" value="4" min="1" max="20">
-            <button id="portionsBtn" class="portion-btn" type="button">Portionen</button>
+            <input class="portion-input" type="number" id="portionsInput" value="4" min="1" max="20" onkeydown="if(event.key==='Enter') update()">
+            <button id="portionsBtn" class="portion-btn" type="button" onclick="update()">Portionen</button>
         </div>
     </div>
-    <ul class="ingredients-list" id="zutaten" data-base-portion="4">
-        <li data-menge="600" data-einheit="g" data-name="Mehl">600 g Mehl</li>
-        <li data-menge="4" data-einheit="Stk" data-name="Eier">4 Stk Eier</li>
-        <li data-menge="300" data-einheit="ml" data-name="Wasser"> 300 ml Wasser</li>
-        <li data-menge="" data-einheit="" data-name="Salz"> Salz</li>
-        <li data-menge="300" data-einheit="g" data-name="geriebener Käse"> 300 g geriebener Käse</li>
-        <li data-menge="2" data-einheit="Stk" data-name="Zwiebeln"> 2 Stk Zwiebeln</li>
-        <li data-menge="" data-einheit="" data-name="Butter" data-note="zum Anbraten"> Butter zum Anbraten</li>
+    <ul class="ingredients-list" id="ingredientsList" data-base-portion="4">
+        <li class="ingredient-item" data-qty="600" data-unit="g" data-name="Mehl">600 g Mehl</li>
+        <li class="ingredient-item" data-qty="4" data-unit="Stk" data-name="Eier">4 Stk Eier</li>
+        <li class="ingredient-item" data-qty="300" data-unit="ml" data-name="Wasser"> 300 ml Wasser</li>
+        <li class="ingredient-item" data-qty="" data-unit="" data-name="Salz"> Salz</li>
+        <li class="ingredient-item" data-qty="300" data-unit="g" data-name="geriebener Käse"> 300 g geriebener Käse</li>
+        <li class="ingredient-item" data-qty="2" data-unit="Stk" data-name="Zwiebeln"> 2 Stk Zwiebeln</li>
+        <li class="ingredient-item" data-qty="" data-unit="" data-name="Butter" data-note="zum Anbraten"> Butter zum Anbraten</li>
     </ul>
   </section>
   <section class="prep">
@@ -112,7 +112,7 @@
         </div>
      </div>
 </footer>
-  <script>
+  <!-- <script>
   const portionenInput = document.getElementById("portionen");
   const zutaten = document.querySelectorAll("#zutaten li");
   const basisPortionen = 4;
@@ -147,8 +147,9 @@ zutat.textContent = einheit
   ? `${gerundet} ${einheit} ${name}`
   : `${gerundet} ${name}`;
     });
-  });
-  </script>
+  }); 
+  </script> -->
+  <script src="./script-Odilo.js"></script>
 </body>
 
 </html>
